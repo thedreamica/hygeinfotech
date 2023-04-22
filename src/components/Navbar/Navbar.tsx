@@ -9,7 +9,7 @@ const Navbar = () => {
   const [visible,setVisible] =useState(false);
   const [width,setWidth] = useState(0);
   useEffect(()=>{
-    setWidth(window.innerWidth);
+    setWidth(window.outerWidth);
   },[])
   return (
     <div className={styles.nav}>
@@ -27,7 +27,7 @@ const Navbar = () => {
                   </Grid>
                   <Grid item xs={7}>
                     {
-                      width>800 ? 
+                      width > 800 ? 
                       <Grid container justifyContent={'space-evenly'} alignItems={'center'} className={styles.navItemContainer}>
                       {
                         navItem.map((item,index)=>{

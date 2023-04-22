@@ -8,15 +8,23 @@ const Footer = () => {
 
     useEffect(()=>{
         setWidth(window.innerWidth)
-    })
+    },[])
   return (
     <Grid container justifyContent={'center'}>
     {width > 800 ?
+    <Grid container>
     <div className={styles.footer}>
         <Grid container alignItems={'center'} justifyContent={'flex-start'} style={{marginTop:'200px'}}>
+            <Image 
+            src = "/logo.png"
+            alt="logo"
+            width={321}
+            height={131}
+            priority
+            />
         </Grid>
-    </div>
-    :
+        </div>
+    </Grid>:
     <div className={styles.mobileFooter}>
 
     </div>
