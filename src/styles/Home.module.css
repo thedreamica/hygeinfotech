@@ -18,7 +18,7 @@
 
 
     .primaryShadow {
-        -webkit-text-stroke: 1px #EEB609;
+        -webkit-text-stroke: 0.02rem #EEB609;
         -webkit-text-fill-color: white;
     }
 
@@ -27,7 +27,7 @@
     }
 
     .darkShadow {
-        -webkit-text-stroke: 1px #111;
+        -webkit-text-stroke: 0.1em #111;
         -webkit-text-fill-color: white;
     }
 
@@ -35,6 +35,11 @@
         .main {
             margin: 0;
         }
+
+        .main::-webkit-scrollbar{
+            display: none;
+        }
+
         .h2{
             font-size: 60px;
             font-family: 'Poppins';

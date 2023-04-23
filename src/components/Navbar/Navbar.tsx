@@ -16,10 +16,10 @@ const Navbar = () => {
                 <Grid container className={styles.navbar} alignItems={'center'}>
                   <Grid item xs={5}>
                     <Image
-                    src={"/logo.png"}
+                    src={"/infotechLogo.png"}
                     alt="Hype Logo"
                     className={styles.logo}
-                    height={73}
+                    height={90}
                     width={201}
                     priority
                     />
@@ -40,15 +40,14 @@ const Navbar = () => {
                       }
                     </Grid>:
                     <Grid container justifyContent={'right'}>
-                    <Button variant='outlined' sx={{ width:'50px',height:'50px',borderRadius:'50%',border:'1px solid black'}} onClick={()=>setVisible(!visible)}>
                     <Image 
-                    src='/hamburgerBlack.png'
+                    src={!visible ? '/hamburgerOutlined.png' : '/cancel.png'}
                     alt = 'button'
                     height={40}
                     width={40}
+                    onClick={()=>{setVisible(!visible)}}
                     priority
                     />
-                    </Button>
                     </Grid>
                     }
                   </Grid>

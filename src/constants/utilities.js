@@ -60,3 +60,26 @@ export const process = [
     },
 
 ]
+
+export const getIntouch = [
+    {
+        link:'/fb.png',
+        darkLink:'/fbDark.png',
+        text:'Facebook'
+    },
+    {
+        link:'/twitter.png',
+        darkLink:'/twitterDark.png',
+        text:'Twitter'
+    },
+    {
+        link:'/discord.png',
+        darkLink:'/discordDark.png',
+        text:'Discord'
+    },
+    {
+        link:'/insta.png',
+        darkLink:'/instaDark.png',
+        text:'Instagram',
+    },
+]

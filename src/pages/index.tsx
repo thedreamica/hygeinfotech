@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import Head from 'next/head'
-import styles from '@styles/Home.module.css'
 import { Footer, NavbarComponent,Preface } from '@components'
 
 
@@ -11,8 +10,9 @@ const Home = () => {
             <title>Hyge</title>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/logo.PNG" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Monteserrat"></link>
         </Head>
-        <main className={styles.main}>
+        <main style={{overflowX:'hidden'}}>
             <NavbarComponent />
             <Preface />
             <Footer />

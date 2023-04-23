@@ -16,8 +16,7 @@ const Preface = () => {
         display:'grid',
         gridTemplateColumns:'repeat(2,1fr)',
         rowGap:'20px',
-        columnGap:'20px',
-        margin:'10%'
+        columnGap:'10px',
     }
     useEffect(()=>{
         setWidth(window.outerWidth);
@@ -25,7 +24,7 @@ const Preface = () => {
   return (
       <div className={styles.preface}>
             <Grid container justifyContent={'center'} mt={5}>
-                <Grid item lg={8} xs={10}>
+                <Grid item lg={9} xs={12}>
                     <Typography variant='h2' className={styles.h2}  component={'h2'}>
                         Reshape the future 
                     </Typography>
@@ -33,8 +32,8 @@ const Preface = () => {
                         With our
                     </Typography>
                     <Typography align='justify' className={styles.h2} variant='h2' component={'h2'}  >
-                        <span className={styles.primary}>Revenue</span> 
-                        <span className={styles.primaryShadow}> Cycle Management</span>
+                        <span style={{color:'#EEb609'}}>Revenue </span> 
+                        <span style={{WebkitTextStroke:'0.02rem #EEB609',WebkitTextFillColor:'#ffffff'}}>Cycle Management</span>
                     </Typography>
                     <Grid container xs={12} lg={9} mt={2}>
                     <Typography align='left' variant='caption' sx={{
@@ -74,10 +73,11 @@ const Preface = () => {
             </Grid>
             <Grid container>
                 <Typography sx={{
-                    WebkitTextStroke:'0.05rem #000',
+                    WebkitTextStroke:'0.1rem #000',
                     WebkitTextFillColor:'#ffffff',
-                    fontSize:width>800 ? '300px' : '200px'
-                }} variant={'h1'}>
+                    fontSize:width>800 ? '300px' : '150px',
+                    opacity:0.4,
+                }} >
                     hyge
                 </Typography>
             </Grid>
@@ -121,13 +121,19 @@ const Preface = () => {
                 </Grid>
             </Grid>
             <Grid container justifyContent={'center'} mt={12}>
-                    <Typography variant={'h1'} sx={{fontWeight:'700'}}>
+                    <Typography variant={'h1'} sx={{fontWeight:'700',fontFamily:'Poppins', fontSize:width>800 ? '80px' : '40px',}}>
                         Know the <span className={styles.primary}>[</span>Hyge<span className={styles.primary}>]</span>
                     </Typography>
             </Grid>
             <Grid container justifyContent={'center'}>
-                    <Typography variant={'h1'} sx={{fontWeight:'700'}}>
-                    <span className={styles.darkShadow}>difference</span> 
+                    <Typography variant={'h1'} sx={{
+                        fontWeight:'500',
+                        fontFamily:'Poppins',
+                        WebkitTextStroke:'0.02em black',
+                        WebkitTextFillColor:'#ffffff',
+                        fontSize:width>800 ? '80px' : '40px',
+                }}>
+                    difference
                     </Typography>
             </Grid>
     <Box sx={width > 800 ? desktopPros : mobileProps}>
@@ -136,8 +142,8 @@ const Preface = () => {
                             return(
                             <Box sx={
                                         {
-                                            width:'195px',
-                                            height:'195px',
+                                            width: width ? '195px' : '100px',
+                                            height:width ? '195px' : '100px',
                                             borderRadius:'50%',
                                             border:'1px solid #000',
                                             textAlign:'center',
@@ -159,13 +165,13 @@ const Preface = () => {
             <Typography variant={'caption'} ml={2}>
                How we do?
             </Typography>
-            <Grid container xs={5} justifyContent={'center'}>
-            <Typography variant={'h1'} >
+            <Grid container xs={5} justifyContent={'center'} ml={2}>
+            <Typography variant={'h1'} sx={{fontWeight:'900',fontSize:width>800 ? '100px' : '40px',}} >
                 <span className={styles.secondary}>process</span>
             </Typography>
             </Grid>
-            <Grid container  justifyContent={'right'} xs={10}>
-            <Typography variant='h1'>
+            <Grid container  justifyContent={'right'} xs={12}>
+            <Typography variant='h1' sx={{fontWeight:'900', fontSize:width>800 ? '100px' : '40px',}}>
             <span className={styles.primary}> driven</span> design
             </Typography>
             </Grid>
@@ -179,7 +185,7 @@ const Preface = () => {
                     alt='process flow'
                     className={styles.process}
                     width={width-250}
-                    height={500}
+                    height={450}
                     priority
                     /> :
                 <Grid item xs={12} sx={{textAlign:'center'}} mt={3}> 
@@ -187,7 +193,7 @@ const Preface = () => {
                     src='/processM.png'
                     alt='process flow'
                     className={styles.process}
-                    width={299}
+                    width={350}
                     height={165}
                     priority
                     />
@@ -213,8 +219,8 @@ const Preface = () => {
                 </Grid>
                 }
             </Grid>
-            <Grid container  mt={2}>
-                <Grid item xs={12} lg={6}>
+            <Grid container  mt={8} ml={2} mb={8}>
+                <Grid item xs={12} lg={6} >
                     {
                         width < 800 &&(
                             <Typography sx={{
@@ -237,10 +243,10 @@ const Preface = () => {
                        We Are 
                     </Typography>
                 </Grid>
-                <Grid item xs={12} lg={6}>
+                <Grid item xs={12} lg={6} mt={3} >
                 <Typography sx={{
-                        fontFamily: 'Montserrat',
-                        fontSize:  width > 800 ?'50px':"30px",
+                        fontFamily: 'Poppins',
+                        fontSize:  width > 800 ?'45px':"25px",
                         fontWeight: '400',
                         textAlign:'center',
                     }}>
@@ -257,8 +263,8 @@ const Preface = () => {
                 src={width > 800 ? '/158.png':'/158Dark.png'}
                 alt='logo'
                 className={styles.process}
-                width={149}
-                height={69}
+                width={width > 800 ? 150 : 75}
+                height={width > 800 ? 70 : 40}
                 priority
                 />
             </Grid>
@@ -267,8 +273,8 @@ const Preface = () => {
                 src={width > 800 ? '/138.png': '/138Dark.png'}
                 alt='logo'
                 className={styles.process}
-                width={182}
-                height={69}
+                width={width > 800 ? 180 : 100}
+                height={width > 800 ? 70 : 40}
                 priority
                 />
             </Grid>
@@ -277,14 +283,14 @@ const Preface = () => {
                 src={width > 800 ? '/139.png':'/139Dark.png'}
                 alt='logo'
                 className={styles.process}
-                width={207}
-                height={70}
+                width={width > 800 ? 180 : 100}
+                height={width > 800 ? 70 : 40}
                 priority
                 />
             </Grid>
             </Grid>
 
-            <Grid container justifyContent={'center'} style={{marginTop:"50px"}}>
+            <Grid container justifyContent={'center'}>
             <div >
                         <Image
                         src="/vectorLight.png"
@@ -301,7 +307,7 @@ const Preface = () => {
                 color:width < 800 ?"#ffffff" : "#000",
                 }}>
             {width  > 800 && 
-            <Grid container  xs={12} sm={12} mt={2} >
+            <Grid container  xs={12} sm={12} >
                     <Box className={styles.roundDiv2} sx={{backgroundColor:'#000000',marginLeft:'auto',marginRight:'auto'}} >
                         <Image 
                             src='/vectorLight.png'

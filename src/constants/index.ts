@@ -1,1 +1,1 @@
-export {navItem,differences,process} from './utilities'
+export {navItem,differences,process,getIntouch} from './utilities'
