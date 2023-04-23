@@ -42,7 +42,7 @@ const Preface = () => {
                         fontStyle: 'normal',
                         fontWeight: '500',
                         fontSize:width > 800 ?'25px':'13px',
-                        lineHeight: '40px',
+                        lineHeight:width > 800? '40px':'20px',
                         letterSpacing: '0.01em',
                         color: '#6C7A89',
                     }}>
@@ -52,7 +52,7 @@ const Preface = () => {
                     Let us show you how to leverage these services and take your business to the next level.
                     </Typography>
                     </Grid>
-                    <Grid container>
+                    <Grid container mt={2}>
                     <Grid item>
                         <Button variant={'outlined'} onClick={()=>{}} sx={{width:'140px',height:'50px',border:'1px solid #000000',borderRadius:'50px',color:'#000'}}>
                             Discover Me
@@ -191,7 +191,7 @@ const Preface = () => {
                     height={165}
                     priority
                     />
-                    <Grid container justifyContent={'center'}>
+                    <Grid container justifyContent={'center'} mt={3}>
                     {
                         process.map((proc)=>{
                             return (
@@ -254,7 +254,7 @@ const Preface = () => {
         }:{}}>
             <Grid item lg={4} xs={12} sx={{textAlign:'center'}}>
             <Image 
-                src='/158.png'
+                src={width > 800 ? '/158.png':'/158Dark.png'}
                 alt='logo'
                 className={styles.process}
                 width={149}
@@ -264,7 +264,7 @@ const Preface = () => {
             </Grid>
             <Grid item lg={4} xs={6} sx={{textAlign:'center'}}>
             <Image 
-                src='/138.png'
+                src={width > 800 ? '/138.png': '/138Dark.png'}
                 alt='logo'
                 className={styles.process}
                 width={182}
@@ -274,7 +274,7 @@ const Preface = () => {
             </Grid>
             <Grid item lg={4} xs={6} sx={{textAlign:'center'}}>
             <Image 
-                src='/139.png'
+                src={width > 800 ? '/139.png':'/139Dark.png'}
                 alt='logo'
                 className={styles.process}
                 width={207}
@@ -296,7 +296,12 @@ const Preface = () => {
                         />
                     </div>
             </Grid>
-            <Grid container  xs={12} sm={12}  >
+        <Grid container sx={{
+                backgroundColor:width < 800 ? "#000" : "#ffffff",
+                color:width < 800 ?"#ffffff" : "#000",
+                }}>
+            {width  > 800 && 
+            <Grid container  xs={12} sm={12} mt={2} >
                     <Box className={styles.roundDiv2} sx={{backgroundColor:'#000000',marginLeft:'auto',marginRight:'auto'}} >
                         <Image 
                             src='/vectorLight.png'
@@ -308,21 +313,32 @@ const Preface = () => {
                         />
                     </Box>
                 </Grid>
-            <Grid container justifyContent={'center'}>
-            <Typography variant='h2' className={styles.h2}  component={'h2'}>
+            }
+            <Grid container justifyContent={'center'} >
+            <Typography variant='h2' className={styles.h2}  component={'h2'} mt={5}>
                         Let's talk  
             </Typography>
             </Grid>
-            <Grid container justifyContent={'center'}>
+            <Grid container justifyContent={'center'} mb={5} >
                     <Grid item>
-                        <Button variant={'outlined'} onClick={()=>{}} sx={{width:'140px',height:'50px',border:'1px solid #000000',borderRadius:'50px',color:'#000'}}>
+                        <Button variant={'outlined'} onClick={()=>{}} sx={{
+                            width:'140px',
+                            height:'50px',
+                            border:width > 800 ? '1px solid #000000' : '2px solid #ffffff',
+                            borderRadius:'50px',
+                            color:width > 800 ? '#000' : '#fff',
+                        }}
+                            >
                             Discover Me
                         </Button>
                     </Grid>
                     <Grid item>
-                    <Button variant={'outlined'} onClick={()=>{}} sx={{width:'50px',height:'50px',borderRadius:'50%',border:'1px solid #000000',marginLeft:'10px'}}>
+                    <Button variant={'outlined'} onClick={()=>{}} 
+                    sx={{width:'50px',height:'50px',borderRadius:'50%',
+                    border:width > 800 ? '1px solid #000000' : '2px solid #ffffff',
+                    marginLeft:'10px'}}>
                         <Image
-                        src={'/right.png'}
+                        src={width > 800 ? '/right.png':'/rightLight.png'}
                         alt={'right arrow'}
                         width={35}
                         height={30}
@@ -330,8 +346,9 @@ const Preface = () => {
                         priority/>
                     </Button>
                     </Grid>
-                    </Grid>
-      </div>
+                </Grid>
+        </Grid>
+    </div>
   )
 }
 
