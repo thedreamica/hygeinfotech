@@ -1,229 +1,258 @@
-import { Grid } from '@mui/material'
+import { Grid,Box, Typography,Chip,Button } from '@mui/material'
 import Image from 'next/image';
 import React,{useState,useEffect} from 'react'
 import styles from '@styles/Home.module.css';
+import { differences,process } from '@/constants';
 
 const Preface = () => {
     const [width,setWidth] = useState(0);
+    const desktopPros={
+        display:'grid',
+        gridTemplateColumns:'repeat(4,1fr)',
+        rowGap:'20px',
+        margin:'10%'
+    };
+    const mobileProps = {
+        display:'grid',
+        gridTemplateColumns:'repeat(2,1fr)',
+        rowGap:'20px',
+        columnGap:'20px',
+        margin:'10%'
+    }
     useEffect(()=>{
-        setWidth(window.innerWidth);
+        setWidth(window.outerWidth);
     },[])
   return (
       <div className={styles.preface}>
-            <Grid container>
-                <Grid item xs={2}>
-                </Grid>
-                <Grid item xs={6}>
-                    <label className={styles.labelh1 + " " + styles.dark}>
+            <Grid container justifyContent={'center'} mt={5}>
+                <Grid item lg={8} xs={10}>
+                    <Typography variant='h2' className={styles.h2}  component={'h2'}>
                         Reshape the future 
-                    </label>
-                    <br />
-                    <label className={styles.labelh1 + " " + styles.dark}>
-                       with our
-                    </label>
-                    <br />
-                    <label className={styles.labelh2 + " " + styles.primary}>
-                        Revenue
-                    </label>&ensp;
-                    <label className={styles.labelh2 + " " + styles.primaryShadow}>
-                        Cycle Management
-                    </label>
-                    <br />
-                    <p className={styles.prefaceContent}>
-                    Discover new heights with our IT services. Our innovative approaches for RCM, digital marketing, and DevOps can turn your business operations into a revenue-generating powerhouse. Let us show you how to leverage these services and take your business to the next level.
-                    </p>
-                    <button className={styles.chipLight}>Discover More </button>
-                    <button className={styles.rounded + " " + styles.circle}>
-                        <Image 
-                        src="/right.png"
-                        alt="right arrow"
-                        height={60}
-                        width={65}
-                        className={styles.arrow}
-                        priority
-                        />
-                    </button>
-                </Grid>
-                <Grid item xs={4}>
-                </Grid>
-            </Grid>
-            <Grid container justifyContent={'center'}>
-                <label className={styles.labelMega + " " + styles.lightShadow} >
-                    hyge
-                </label>
-            </Grid>
-            <Grid container>
-                <label className={styles.labelSmall}>
-                What Sets Us Apart?
-                </label>
-            </Grid>
-            <Grid container>
-                <Grid item xs={2}>
-                </Grid>
-                <Grid item xs={7}>
-                    <label className={styles.labelBold}>
-                    Nothing ever becomes comfortable till you experience it with 
-                    </label>
-                    &ensp;
-                    <label className={styles.labelBold + " " + styles.primary}>
-                         hyge 
-                    </label>
-                    <br></br>
-                    <label className={styles.labelRegular}>
-                        Our solutions are tailored to your needs, with 
-                        hyper-flexibility, expert customer support, 
-                        continuous improvement, and collaborative 
-                        partnerships. Experience the comfort of 
-                        working with us and streamline your business processes seamlessly.
-                    </label>
-                </Grid>
-                <Grid item xs={3} style={{position:'relative'}}>
-                    <div className={styles.rounded + " " + styles.roundDiv} style={{position:'absolute',bottom:"50px",left:"10px"}}>
+                    </Typography>
+                    <Typography variant='h2' className={styles.h2}  component={'h2'}>
+                        With our
+                    </Typography>
+                    <Typography align='justify' className={styles.h2} variant='h2' component={'h2'}  >
+                        <span className={styles.primary}>Revenue</span> 
+                        <span className={styles.primaryShadow}> Cycle Management</span>
+                    </Typography>
+                    <Grid container xs={12} lg={9} mt={2}>
+                    <Typography align='left' variant='caption' sx={{
+                        fontFamily: 'Montserrat',
+                        fontStyle: 'normal',
+                        fontWeight: '500',
+                        fontSize:width > 800 ?'25px':'13px',
+                        lineHeight: '40px',
+                        letterSpacing: '0.01em',
+                        color: '#6C7A89',
+                    }}>
+                    Discover new heights with our IT services.
+                    Our innovative approaches for RCM, digital marketing, 
+                    and DevOps can turn your business operations into a revenue-generating powerhouse.
+                    Let us show you how to leverage these services and take your business to the next level.
+                    </Typography>
+                    </Grid>
+                    <Grid container>
+                    <Grid item>
+                        <Button variant={'outlined'} onClick={()=>{}} sx={{width:'140px',height:'50px',border:'1px solid #000000',borderRadius:'50px',color:'#000'}}>
+                            Discover Me
+                        </Button>
+                    </Grid>
+                    <Grid item>
+                    <Button variant={'outlined'} onClick={()=>{}} sx={{width:'50px',height:'50px',borderRadius:'50%',border:'1px solid #000000',marginLeft:'10px'}}>
                         <Image
-                        src="/vector.png"
-                        alt="vector"
-                        className={styles.vector}
-                        height={127}
-                        width={99}
-                        priority
+                        src={'/right.png'}
+                        alt={'right arrow'}
+                        width={35}
+                        height={30}
+                        style={{marginTop:'5px'}}
+                        priority/>
+                    </Button>
+                    </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid container>
+                <Typography sx={{
+                    WebkitTextStroke:'0.05rem #000',
+                    WebkitTextFillColor:'#ffffff',
+                    fontSize:width>800 ? '300px' : '200px'
+                }} variant={'h1'}>
+                    hyge
+                </Typography>
+            </Grid>
+            <Grid container>
+                <Typography variant={'body2'} align='left' ml={2} sx={{fontSize:'20px',color:'#afafaf'}} mt={2} >
+                    What set us apart?
+                </Typography>
+            </Grid>
+            <Grid container justifyContent={'right'}>
+                <Grid item xs={12} sm={8} ml={ width > 800 ? 0 : 3} mt={2}>
+                    <Typography variant='h4' sx={{
+                        fontFamily: 'Poppins',
+                        fontSize: width > 800 ? '52px' : '26px',
+                        fontWeight: 700,
+                    }}>
+                    Nothing ever becomes comfortable till you experience it with
+                    <span className={styles.primary}> hyge</span>
+                    </Typography>
+                    <Typography sx={{
+                        fontFamily: 'Montserrat',
+                        fontStyle: 'normal',
+                        fontWeight: '400',
+                        fontSize: width > 800 ? '40px':'20px',
+                        lineHeight:width > 800 ?'65px':'40px',
+                        color: '#6C7A89'
+                    }} variant={'h6'} mt={2}>
+                    Our solutions are tailored to your needs, with hyper-flexibility, expert customer support, continuous improvement, and collaborative partnerships. Experience the comfort of working with us and streamline your business processes seamlessly.
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} sm={2} style={{position:'relative'}} mt={width > 800 ? 0 : 5}  >
+                    <Box className={styles.roundDiv1}>
+                        <Image 
+                            src='/vector.png'
+                            alt='vector'
+                            width={100}
+                            height={122}
+                            className={styles.vector}
+                            priority
                         />
-                    </div>
+                    </Box>
                 </Grid>
+            </Grid>
+            <Grid container justifyContent={'center'} mt={12}>
+                    <Typography variant={'h1'} sx={{fontWeight:'700'}}>
+                        Know the <span className={styles.primary}>[</span>Hyge<span className={styles.primary}>]</span>
+                    </Typography>
             </Grid>
             <Grid container justifyContent={'center'}>
-                <Grid item xs={6}>
-                    <label className={styles.labelLarge}>
-                        Know the &nbsp;
-                    </label>
-                    <label className={styles.labelLarge+" " + styles.primary}>
-                        [
-                    </label>
-                    <label className={styles.labelLarge}>
-                        hyge
-                    </label>     
-                    <label className={styles.labelLarge+" " + styles.primary}>
-                        ]
-                    </label>
-                    <br></br>
-                    <label className={styles.labelLarge + " "+ styles.darkShadow}>
-                        difference
-                    </label>  
-                </Grid>
-                <Grid container justifyContent={"space-evenly"} style={{marginTop:'50px'}}>
-                <Grid item className={styles.rounded + " " + styles.largeRoundDivA}>
-                    <div className={styles.alignCenter}>
-                        <label className={styles.labelh4}>
-                            15%+
-                        </label><br/>
-                        <label>
-                            Claim errors
-                        </label>
-                    </div>
-                </Grid>
-                <Grid item className={styles.rounded + " " + styles.largeRoundDivB}>
-                <div className={styles.alignCenter}>
-                        <label className={styles.labelh4}>
-                            50%
-                        </label><br/>
-                        <label>
-                            Wasted Ad Spend
-                        </label>
-                    </div>
-                </Grid>
-                <Grid item className={styles.rounded + " " + styles.largeRoundDivA}>
-                <div className={styles.alignCenter}>
-                        <label className={styles.labelh4}>
-                            90%
-                        </label><br/>
-                        <label>
-                            lack of patience data-quality
-                        </label>
-                    </div>
-                </Grid>
-                <Grid item className={styles.rounded + " " + styles.largeRoundDivB}>
-                <div className={styles.alignCenter}>
-                        <label className={styles.labelh4}>
-                            7%
-                        </label><br/>
-                        <label>
-                            Average denial rate
-                        </label>
-                    </div>
-                </Grid>
-                </Grid>
-                <Grid container justifyContent={"space-evenly"} style={{marginTop:'50px'}}>
-                <Grid item className={styles.rounded + " " + styles.largeRoundDivA}>
-                <div className={styles.alignCenter}>
-                        <label className={styles.labelh4}>
-                            14.90
-                        </label><br/>
-                        <label>
-                            hrs/week on per authourization
-                        </label>
-                    </div>
-                </Grid>
-                <Grid item className={styles.rounded + " " + styles.largeRoundDivB}>
-                <div className={styles.alignCenter}>
-                        <label className={styles.labelh4}>
-                            75%
-                        </label><br/>
-                        <label>
-                            Devops failure
-                        </label>
-                    </div>
-                </Grid>
-                <Grid item className={styles.rounded + " " + styles.largeRoundDivA}>
-                <div className={styles.alignCenter}>
-                        <label className={styles.labelh4}>
-                            50%
-                        </label><br/>
-                        <label>
-                            Higher labour costs
-                        </label>
-                    </div>
-                </Grid>
-                <Grid item className={styles.rounded + " " + styles.largeRoundDivB}>
-                <div className={styles.alignCenter}>
-                        <label className={styles.labelh4}>
-                            46%
-                        </label><br/>
-                        <label>
-                            Integration issue
-                        </label>
-                    </div>
-                </Grid>
-                </Grid>
+                    <Typography variant={'h1'} sx={{fontWeight:'700'}}>
+                    <span className={styles.darkShadow}>difference</span> 
+                    </Typography>
             </Grid>
-            <Grid container style={{marginTop:"100px"}}>
-            <label className={styles.labelSmall}>
+    <Box sx={width > 800 ? desktopPros : mobileProps}>
+                    {
+                        differences.map(item=>{
+                            return(
+                            <Box sx={
+                                        {
+                                            width:'195px',
+                                            height:'195px',
+                                            borderRadius:'50%',
+                                            border:'1px solid #000',
+                                            textAlign:'center',
+                                        }}>
+                                <Box mt={8}>
+                                    <Typography variant='h6'>
+                                        {item.value}
+                                    </Typography>
+                                    <Typography variant='body1'>
+                                        {item.item}
+                                    </Typography>
+                                </Box>
+                            </Box>
+                            )
+                        })
+                    }
+    </Box>
+            <Grid container mt={10}>
+            <Typography variant={'caption'} ml={2}>
                How we do?
-            </label>
-            <br></br>
-            <label className={styles.labelLarger + " "+styles.secondary}>
-                        process
-            </label>
-            &ensp;
-            <label className={styles.labelLarger + " "+styles.primary} style={{textAlign:'right'}}>
-                        driven
-            </label>&ensp;
-            <label className={styles.labelLarger} >
-                        design
-            </label>
+            </Typography>
+            <Grid container xs={5} justifyContent={'center'}>
+            <Typography variant={'h1'} >
+                <span className={styles.secondary}>process</span>
+            </Typography>
+            </Grid>
+            <Grid container  justifyContent={'right'} xs={10}>
+            <Typography variant='h1'>
+            <span className={styles.primary}> driven</span> design
+            </Typography>
+            </Grid>
             </Grid>
 
             <Grid container justifyContent={'center'}>
-                <Image 
-                src='/process.png'
-                alt='process flow'
-                className={styles.process}
-                width={width-250}
-                height={500}
-                priority
-                />
+                {
+                    width > 800 ? 
+                    <Image 
+                    src='/processD.png'
+                    alt='process flow'
+                    className={styles.process}
+                    width={width-250}
+                    height={500}
+                    priority
+                    /> :
+                <Grid item xs={12} sx={{textAlign:'center'}} mt={3}> 
+                    <Image 
+                    src='/processM.png'
+                    alt='process flow'
+                    className={styles.process}
+                    width={299}
+                    height={165}
+                    priority
+                    />
+                    <Grid container justifyContent={'center'}>
+                    {
+                        process.map((proc)=>{
+                            return (
+                                <Grid item justifyContent={'center'} xs={8}>
+                                    <Typography variant={'h5'} sx={{fontWeight:'600'}} align='center'>
+                                        {proc.id}
+                                    </Typography>
+                                    <Grid container justifyContent={'center'}>
+                                    <Chip variant='outlined' label={proc.topic} sx={{border:'1px solid black',color:'#EEB609',fontSize:'15px',fontFamily:'poppins',fontWeight:'900'}}></Chip>
+                                    </Grid>
+                                    <Typography variant='body1' align='center'>
+                                        {proc.text}
+                                    </Typography>
+                                </Grid>
+                            )
+                        })
+                    }
+                    </Grid>
+                </Grid>
+                }
             </Grid>
-
-            <Grid container justifyContent={'space-evenly'} alignItems={'center'} className={styles.compliances}>
-            <Grid item>
+            <Grid container  mt={2}>
+                <Grid item xs={12} lg={6}>
+                    {
+                        width < 800 &&(
+                            <Typography sx={{
+                                fontSize: "80px",
+                                fontWeight: '700',
+                                textAlign: "center",
+                                color:"#EEB609" 
+                            }}>
+                                * 
+                            </Typography>
+                        )
+                    }
+                    <Typography sx={{
+                        fontFamily: 'Poppins',
+                        fontSize: width > 800 ?'160px': "40px",
+                        fontWeight: '700',
+                        textAlign: width > 800 ? 'left' : "center",  
+                        marginTop:  width < 800 ? '-50px' :""
+                    }}>
+                       We Are 
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} lg={6}>
+                <Typography sx={{
+                        fontFamily: 'Montserrat',
+                        fontSize:  width > 800 ?'50px':"30px",
+                        fontWeight: '400',
+                        textAlign:'center',
+                    }}>
+                       commited to delivering, user centric, Effective and sustainable solution.
+                    </Typography>
+                </Grid>
+            </Grid>
+        <Grid container mt={3} justifyContent={width > 800 ? 'space-evenly' : 'center'} alignItems={'center'} sx={width > 800 ? {
+                height:'300px',
+                backgroundColor:'#0033FF'
+        }:{}}>
+            <Grid item lg={4} xs={12} sx={{textAlign:'center'}}>
             <Image 
                 src='/158.png'
                 alt='logo'
@@ -233,7 +262,7 @@ const Preface = () => {
                 priority
                 />
             </Grid>
-            <Grid item>
+            <Grid item lg={4} xs={6} sx={{textAlign:'center'}}>
             <Image 
                 src='/138.png'
                 alt='logo'
@@ -243,7 +272,7 @@ const Preface = () => {
                 priority
                 />
             </Grid>
-            <Grid item>
+            <Grid item lg={4} xs={6} sx={{textAlign:'center'}}>
             <Image 
                 src='/139.png'
                 alt='logo'
@@ -256,7 +285,7 @@ const Preface = () => {
             </Grid>
 
             <Grid container justifyContent={'center'} style={{marginTop:"50px"}}>
-            <div className={styles.rounded + " " + styles.roundDiv+ " "+ styles.darkDiv} >
+            <div >
                         <Image
                         src="/vectorLight.png"
                         alt="vector"
@@ -267,25 +296,41 @@ const Preface = () => {
                         />
                     </div>
             </Grid>
-            <Grid container justifyContent={'center'}>
-            <label className={styles.labelLarge}>
-                    Let's talk
-            </label>
-            <br></br>
-            </Grid>
-            <Grid container justifyContent={'center'}>
-            <button className={styles.chipLight}>Discover More </button>
-                    <button className={styles.rounded + " " + styles.circle}>
+            <Grid container  xs={12} sm={12}  >
+                    <Box className={styles.roundDiv2} sx={{backgroundColor:'#000000',marginLeft:'auto',marginRight:'auto'}} >
                         <Image 
-                        src="/right.png"
-                        alt="right arrow"
-                        height={60}
-                        width={65}
-                        className={styles.arrow}
-                        priority
+                            src='/vectorLight.png'
+                            alt='vector'
+                            width={100}
+                            height={122}
+                            className={styles.vector}
+                            priority
                         />
-                    </button>
+                    </Box>
+                </Grid>
+            <Grid container justifyContent={'center'}>
+            <Typography variant='h2' className={styles.h2}  component={'h2'}>
+                        Let's talk  
+            </Typography>
             </Grid>
+            <Grid container justifyContent={'center'}>
+                    <Grid item>
+                        <Button variant={'outlined'} onClick={()=>{}} sx={{width:'140px',height:'50px',border:'1px solid #000000',borderRadius:'50px',color:'#000'}}>
+                            Discover Me
+                        </Button>
+                    </Grid>
+                    <Grid item>
+                    <Button variant={'outlined'} onClick={()=>{}} sx={{width:'50px',height:'50px',borderRadius:'50%',border:'1px solid #000000',marginLeft:'10px'}}>
+                        <Image
+                        src={'/right.png'}
+                        alt={'right arrow'}
+                        width={35}
+                        height={30}
+                        style={{marginTop:'5px'}}
+                        priority/>
+                    </Button>
+                    </Grid>
+                    </Grid>
       </div>
   )
 }

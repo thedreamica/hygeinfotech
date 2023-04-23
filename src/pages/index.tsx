@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Head from 'next/head'
 import styles from '@styles/Home.module.css'
-import { Footer, Navbar,Preface } from '@components'
+import { Footer, NavbarComponent,Preface } from '@components'
 
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
             <link rel="icon" href="/logo.PNG" />
         </Head>
         <main className={styles.main}>
-            <Navbar />
+            <NavbarComponent />
             <Preface />
             <Footer />
         </main>

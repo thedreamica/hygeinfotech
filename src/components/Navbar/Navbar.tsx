@@ -40,7 +40,7 @@ const Navbar = () => {
                       }
                     </Grid>:
                     <Grid container justifyContent={'right'}>
-                    <Button variant='outlined' className={styles.rounded} style={{ width:'50px',height:'50px'}} onClick={()=>setVisible(!visible)}>
+                    <Button variant='outlined' sx={{ width:'50px',height:'50px',borderRadius:'50%',border:'1px solid black'}} onClick={()=>setVisible(!visible)}>
                     <Image 
                     src='/hamburgerBlack.png'
                     alt = 'button'
@@ -58,7 +58,7 @@ const Navbar = () => {
                     <div>
                       {
                         navItem.map((item,index)=>{
-                          return (<Grid container key={index}>
+                          return (<Grid container justifyContent={'center'} key={index}>
                             <label className={styles.navItem +" "+ (active === index ? styles.active : "")}onClick={()=>{setActive(index);setVisible(false)}}>
                               {item.text}
                             </label>

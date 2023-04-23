@@ -5,9 +5,8 @@ import Image from 'next/image';
 
 const Footer = () => {
     const [width, setWidth] = useState(0);
-
     useEffect(()=>{
-        setWidth(window.innerWidth)
+        setWidth(window.outerWidth)
     },[])
   return (
     <Grid container justifyContent={'center'}>
