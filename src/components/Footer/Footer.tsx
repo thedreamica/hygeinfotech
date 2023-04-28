@@ -5,20 +5,27 @@ import { navItem,getIntouch} from '@/constants';
 
 
 const Footer = () => {
-    const [width, setWidth] = useState(true);
-    useEffect(()=>{
-        setWidth(window.outerWidth > 800);
-    },[])
+
   return (
        <Box sx={{
-        borderRadius:width ? "25% 25% 0 0 " : "0%",
-        backgroundColor:width ? 'black' : "#fff",
-        color:width ? '#ffffff': '#000000'
+        borderRadius:{lg:"25% 25% 0 0 ",xs:"0%"},
+        backgroundColor:{lg:'black',xs : "#fff"},
+        color:{lg:'#ffffff',xs:'#000000'}
       }}>
         <Grid container alignItems={'center'} >
-
-            <Grid container justifyContent={width ? 'right' : 'left'}>
-            <Grid item xs={12} lg={3} mt={10} pl={3}>
+        
+        <Grid container justifyContent={'right'} sx={{display:{lg:'none',xs:'flex'}}}>
+          <Image
+          src='/infotechLogo.png'
+          alt='logo'
+          width={201}
+          height={90}
+          priority
+          />
+        </Grid>
+        
+            <Grid container justifyContent={ {lg:'right',xs: 'left'}}>
+            <Grid item xs={12} lg={3} mt={10} pl={3} sx={{display:{lg:'flex',xs:'none'}}}>
               <Image
               src='/infotechLogo.png'
               alt='logo'
@@ -27,11 +34,12 @@ const Footer = () => {
               priority
               />
             </Grid>
-              <Grid item xs={12} lg={4} mt={10}sx={{
+            
+              <Grid item xs={12} lg={4} mt={{lg:10,xs:1}}sx={{
                     fontFamily: 'Montserrat',
-                    fontSize:width ? '26px':'15px',
+                    fontSize:{lg:'26px',sx:'15px'},
                     fontWeight: '400',
-                    color: width ? '#ffffff' :'#5f5f5f'                 
+                    color: {lg:'#ffffff',xs:'#5f5f5f'}                 
                   }} >
                   <Typography variant={'h6'}>
                     Office
@@ -46,15 +54,14 @@ const Footer = () => {
                     <br/>
                     Chennai - 600113
                   </Typography>
-                  <Typography variant='body2' mt={width ? 6 : 0}>
+                  <Typography variant='body2' mt={{lg:6,xs:0}}>
                   +91 709-222-0001
                   </Typography>
                   <Typography variant={'body2'} mt={2}>
                   admin@hygeinfotech.com
                   </Typography>
               </Grid>
-              {width && (
-                  <Grid item xs={12} lg={2} mt={10}>
+                  <Grid item xs={12} lg={2} mt={ {lg:10,xs : 2}} sx={{display:{lg:'block',xs:'none'}}}>
                   <Typography variant={'h6'}>
                     Links
                   </Typography>
@@ -64,25 +71,27 @@ const Footer = () => {
                     </Typography> )
                   })}
               </Grid>
-              )}
-              <Grid item xs={12} lg={3}  mt={10}>
+              <Grid item xs={12} lg={3}  mt={{lg:10,xs:2}}>
                   <Typography variant={'h6'}>
                   Get in Touch
                   </Typography>
                   {
-                    getIntouch.map(item=>{
+                    getIntouch.map((item,index)=>{
                       return(
-                        <Grid container mt={2}>
-                          <Grid item xs={1} >
-                            <Image 
-                            src={width ? item.link : item.darkLink}
-                            alt="icon"
-                            width={20}
-                            height={20}
-                            priority
+                        <Grid container mt={2}  key={index}>
+                          <Grid item lg={1.2} xs={0.5}>
+                            <Box component='img'
+                            src={item.link}
+                            alt='icon'
+                            sx={{display:{lg:'inline-flex',xs:'none'},width:'20px',height:'20px'}}
+                            />
+                             <Box component='img'
+                            src={item.darkLink}
+                            alt='icon'
+                            sx={{display:{xs:'inline-flex',lg:'none'},width:'20px',height:'20px'}}
                             />
                           </Grid>
-                          <Grid item xs={11} alignItems={'center'}  >
+                          <Grid item xs={10.5} alignItems={'center'}  >
                           <Typography variant='body2'>
                             {item.text}
                           </Typography>
@@ -105,8 +114,7 @@ const Footer = () => {
           &#169;2023 Hyge Info Tech. All Rights Reserved
           </Typography>
           </Grid>
-{width &&
-          <Grid item xs={12} lg={3}>
+          <Grid item lg={3} sx={{display:{lg:'inline-flex',xs:'none'}}}>
             <span  style={{
               borderBottom:'1px solid #EEB609',
               fontFamily: 'Montserrat',
@@ -117,7 +125,6 @@ const Footer = () => {
             Terms and conditions
             </span>
           </Grid>
-}
         </Grid>
        </Box>
   )

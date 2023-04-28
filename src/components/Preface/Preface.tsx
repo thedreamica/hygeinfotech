@@ -1,50 +1,42 @@
 import { Grid,Box, Typography,Chip,Button } from '@mui/material'
 import Image from 'next/image';
 import React,{useState,useEffect} from 'react'
-import styles from '@styles/Home.module.css';
-import { differences,process } from '@/constants';
+import {ImageGrid} from '@components';
+import { process,h2,h2Primary,h2PrimaryHollow,caption,buttonPrimary,circle,hLarge,darkHallow, circleDark,circleBlack,buttonPrimaryBlack } from '@/constants';
 
 const Preface = () => {
-    const [width,setWidth] = useState(0);
-    const desktopPros={
-        display:'grid',
-        gridTemplateColumns:'repeat(4,1fr)',
-        rowGap:'20px',
-        margin:'10%'
-    };
-    const mobileProps = {
-        display:'grid',
-        gridTemplateColumns:'repeat(2,1fr)',
-        rowGap:'20px',
-        columnGap:'10px',
-    }
+    const [scrollY,setScrollY] = useState(0);
+
     useEffect(()=>{
-        setWidth(window.outerWidth);
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+          };
+          handleScroll();
+          window.addEventListener("scroll", handleScroll);
+          return () => {
+            window.removeEventListener("scroll", handleScroll);
+          };
     },[])
   return (
-      <div className={styles.preface}>
+      <div>
             <Grid container justifyContent={'center'} mt={5}>
                 <Grid item lg={9} xs={12}>
-                    <Typography variant='h2' className={styles.h2}  component={'h2'}>
+                    <Typography variant='h2' sx={h2}  component={'h2'}>
                         Reshape the future 
                     </Typography>
-                    <Typography variant='h2' className={styles.h2}  component={'h2'}>
+                    <Typography variant='h2' sx={h2}  component={'h2'}>
                         With our
                     </Typography>
-                    <Typography align='justify' className={styles.h2} variant='h2' component={'h2'}  >
-                        <span style={{color:'#EEb609'}}>Revenue </span> 
-                        <span style={{WebkitTextStroke:'0.02rem #EEB609',WebkitTextFillColor:'#ffffff'}}>Cycle Management</span>
+                    <Grid container lg={11} justifyContent={'space-between'}>
+                    <Typography sx={h2Primary} variant='h2' component={'h2'}  >
+                        Revenue
+                        <Box component="div" sx={h2PrimaryHollow}>
+                            &ensp;Cycle Management
+                        </Box>
                     </Typography>
+                    </Grid>
                     <Grid container xs={12} lg={9} mt={2}>
-                    <Typography align='left' variant='caption' sx={{
-                        fontFamily: 'Montserrat',
-                        fontStyle: 'normal',
-                        fontWeight: '500',
-                        fontSize:width > 800 ?'25px':'13px',
-                        lineHeight:width > 800? '40px':'20px',
-                        letterSpacing: '0.01em',
-                        color: '#6C7A89',
-                    }}>
+                    <Typography align='left' variant='caption' sx={caption}>
                     Discover new heights with our IT services.
                     Our innovative approaches for RCM, digital marketing, 
                     and DevOps can turn your business operations into a revenue-generating powerhouse.
@@ -53,31 +45,27 @@ const Preface = () => {
                     </Grid>
                     <Grid container mt={2}>
                     <Grid item>
-                        <Button variant={'outlined'} onClick={()=>{}} sx={{width:'140px',height:'50px',border:'1px solid #000000',borderRadius:'50px',color:'#000'}}>
+                        <Button variant={'outlined'} onClick={()=>{}} sx={buttonPrimary}>
                             Discover Me
                         </Button>
                     </Grid>
                     <Grid item>
-                    <Button variant={'outlined'} onClick={()=>{}} sx={{width:'50px',height:'50px',borderRadius:'50%',border:'1px solid #000000',marginLeft:'10px'}}>
-                        <Image
-                        src={'/right.png'}
+                    <Button variant={'outlined'} onClick={()=>{}} sx={circle}>
+                        <img
+                        src={'right.png'}
                         alt={'right arrow'}
                         width={35}
                         height={30}
                         style={{marginTop:'5px'}}
-                        priority/>
+                        loading='eager'
+                        />
                     </Button>
                     </Grid>
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid container>
-                <Typography sx={{
-                    WebkitTextStroke:'0.1rem #000',
-                    WebkitTextFillColor:'#ffffff',
-                    fontSize:width>800 ? '300px' : '150px',
-                    opacity:0.4,
-                }} >
+            <Grid container ml={scrollY/15} >
+                <Typography sx={hLarge} >
                     hyge
                 </Typography>
             </Grid>
@@ -87,116 +75,93 @@ const Preface = () => {
                 </Typography>
             </Grid>
             <Grid container justifyContent={'right'}>
-                <Grid item xs={12} sm={8} ml={ width > 800 ? 0 : 3} mt={2}>
+                <Grid item xs={12} sm={8} ml={{lg:0,xs:3}} mt={2}>
                     <Typography variant='h4' sx={{
                         fontFamily: 'Poppins',
-                        fontSize: width > 800 ? '52px' : '26px',
+                        fontSize: {lg:'52px', xs:'26px'},
                         fontWeight: 700,
                     }}>
                     Nothing ever becomes comfortable till you experience it with
-                    <span className={styles.primary}> hyge</span>
+                    <Box component="div" sx={{ display: 'inline',color:'#EEB609' }}> hyge</Box>
                     </Typography>
                     <Typography sx={{
                         fontFamily: 'Montserrat',
                         fontStyle: 'normal',
                         fontWeight: '400',
-                        fontSize: width > 800 ? '40px':'20px',
-                        lineHeight:width > 800 ?'65px':'40px',
+                        fontSize: {lg:'40px', xs:'20px'},
+                        lineHeight:{lg:'65px', xs:'40px'},
                         color: '#6C7A89'
                     }} variant={'h6'} mt={2}>
                     Our solutions are tailored to your needs, with hyper-flexibility, expert customer support, continuous improvement, and collaborative partnerships. Experience the comfort of working with us and streamline your business processes seamlessly.
                     </Typography>
                 </Grid>
-                <Grid item xs={12} sm={2} style={{position:'relative'}} mt={width > 800 ? 0 : 5}  >
-                    <Box className={styles.roundDiv1}>
-                        <Image 
-                            src='/vector.png'
+                <Grid item xs={12} sm={2}  mt={{lg:0,xs:5}}  >
+                    <Box sx={{
+                        height: {lg:'195px',xs:'76px'},
+                        width:{lg:'195px',xs:'76px'},
+                        borderRadius:'50%',
+                        border:'2px solid #EEB609',
+                        marginTop:{lg:'350px',xs:'20px'},
+                        marginLeft:'auto',
+                        marginRight:'auto',
+                    }}>
+                        <Box
+                           component={'img'}
+                           src='vector.png'
                             alt='vector'
-                            width={100}
-                            height={122}
-                            className={styles.vector}
-                            priority
+                            sx={{width:{lg:'100px',xs:'54px'},height:{lg:'122px',xs:'56px'}, marginLeft: {lg:'45px',xs:'12px'},
+                            marginTop: {lg:'30px',xs:'7px'}}}
                         />
                     </Box>
                 </Grid>
             </Grid>
             <Grid container justifyContent={'center'} mt={12}>
-                    <Typography variant={'h1'} sx={{fontWeight:'700',fontFamily:'Poppins', fontSize:width>800 ? '80px' : '40px',}}>
-                        Know the <span className={styles.primary}>[</span>Hyge<span className={styles.primary}>]</span>
+                    <Typography variant={'h1'} sx={{fontWeight:'700',fontFamily:'Poppins', fontSize: {lg:'80px',xs : '40px'},}}>
+                        Know the <Box component="div" sx={{ display: 'inline',color:'#EEB609' }}>[</Box>Hyge<Box component="div" sx={{ display: 'inline',color:'#EEB609' }}>]</Box>
                     </Typography>
             </Grid>
             <Grid container justifyContent={'center'}>
-                    <Typography variant={'h1'} sx={{
-                        fontWeight:'500',
-                        fontFamily:'Poppins',
-                        WebkitTextStroke:'0.02em black',
-                        WebkitTextFillColor:'#ffffff',
-                        fontSize:width>800 ? '80px' : '40px',
-                }}>
+                    <Typography variant={'h1'} sx={darkHallow}>
                     difference
                     </Typography>
             </Grid>
-    <Box sx={width > 800 ? desktopPros : mobileProps}>
-                    {
-                        differences.map(item=>{
-                            return(
-                            <Box sx={
-                                        {
-                                            width: width ? '195px' : '100px',
-                                            height:width ? '195px' : '100px',
-                                            borderRadius:'50%',
-                                            border:'1px solid #000',
-                                            textAlign:'center',
-                                        }}>
-                                <Box mt={8}>
-                                    <Typography variant='h6'>
-                                        {item.value}
-                                    </Typography>
-                                    <Typography variant='body1'>
-                                        {item.item}
-                                    </Typography>
-                                </Box>
-                            </Box>
-                            )
-                        })
-                    }
-    </Box>
-            <Grid container mt={10}>
-            <Typography variant={'caption'} ml={2}>
+            <ImageGrid scrollY={scrollY}  />
+        <Grid container mt={10}>
+            <Typography sx={{fontSize:'20px',color:'#afafaf'}} ml={2}>
                How we do?
             </Typography>
-            <Grid container xs={5} justifyContent={'center'} ml={2}>
-            <Typography variant={'h1'} sx={{fontWeight:'900',fontSize:width>800 ? '100px' : '40px',}} >
-                <span className={styles.secondary}>process</span>
+            <Grid container lg={5} xs={12} justifyContent={'center'} ml={2}>
+            <Typography variant={'h1'} sx={{fontWeight:'900',fontSize:{lg:'100px',md:'75px',xs:'50px'},color:'#0033FF'}} >
+                process
             </Typography>
             </Grid>
-            <Grid container  justifyContent={'right'} xs={12}>
-            <Typography variant='h1' sx={{fontWeight:'900', fontSize:width>800 ? '100px' : '40px',}}>
-            <span className={styles.primary}> driven</span> design
+            <Grid container  justifyContent={{lg:'right',xs:'center'}} xs={12}>
+            <Typography variant='h1' sx={{fontWeight:'900', fontSize:{lg:'100px',md:'75px',xs: '50px'},}}>
+            <Box component="div"  sx={{ display: {lg:'inline',xs:'block'},color:'#EEB609', }}>driven</Box>  design
             </Typography>
             </Grid>
             </Grid>
 
-            <Grid container justifyContent={'center'}>
-                {
-                    width > 800 ? 
-                    <Image 
-                    src='/processD.png'
-                    alt='process flow'
-                    className={styles.process}
-                    width={width-250}
-                    height={450}
-                    priority
-                    /> :
-                <Grid item xs={12} sx={{textAlign:'center'}} mt={3}> 
-                    <Image 
-                    src='/processM.png'
-                    alt='process flow'
-                    className={styles.process}
-                    width={350}
-                    height={165}
-                    priority
-                    />
+            <Grid container justifyContent={'center'} mt={5} >
+                    <Box
+                        component="img"
+                        src='processD.png'
+                        alt={'process'}
+                        sx={{
+                            display:{lg:'block',xs:'none'},
+                            width:'90%'
+                        }}
+                        />
+                           <Box
+                        component="img"
+                        src='processM.png'
+                        alt={'process'}
+                        sx={{
+                            display:{lg:'none',xs:'block'},
+                            width:'90%'
+                        }}
+                        />
+                <Grid item xs={12} sx={{textAlign:'center',display:{lg:'none',xs:'block'}}} mt={3}> 
                     <Grid container justifyContent={'center'} mt={3}>
                     {
                         process.map((proc)=>{
@@ -217,28 +182,24 @@ const Preface = () => {
                     }
                     </Grid>
                 </Grid>
-                }
             </Grid>
-            <Grid container  mt={8} ml={2} mb={8}>
+            <Grid container  mt={8} ml={{lg:2,xs:0}} mb={8}>
                 <Grid item xs={12} lg={6} >
-                    {
-                        width < 800 &&(
                             <Typography sx={{
                                 fontSize: "80px",
                                 fontWeight: '700',
                                 textAlign: "center",
-                                color:"#EEB609" 
+                                color:"#EEB609",
+                                display:{lg:'none',xs:'block'}
                             }}>
                                 * 
                             </Typography>
-                        )
-                    }
                     <Typography sx={{
                         fontFamily: 'Poppins',
-                        fontSize: width > 800 ?'160px': "40px",
+                        fontSize: {lg:'160px',md:'80px',xs:"40px"},
                         fontWeight: '700',
-                        textAlign: width > 800 ? 'left' : "center",  
-                        marginTop:  width < 800 ? '-50px' :""
+                        textAlign: {lg:'left',xs : "center"},  
+                        marginTop: { xs:'-50px',lg:'0px'},
                     }}>
                        We Are 
                     </Typography>
@@ -246,7 +207,7 @@ const Preface = () => {
                 <Grid item xs={12} lg={6} mt={3} >
                 <Typography sx={{
                         fontFamily: 'Poppins',
-                        fontSize:  width > 800 ?'45px':"25px",
+                        fontSize: {lg:'45px',md:'30px',xs:"21px"},
                         fontWeight: '400',
                         textAlign:'center',
                     }}>
@@ -254,102 +215,133 @@ const Preface = () => {
                     </Typography>
                 </Grid>
             </Grid>
-        <Grid container mt={3} justifyContent={width > 800 ? 'space-evenly' : 'center'} alignItems={'center'} sx={width > 800 ? {
-                height:'300px',
-                backgroundColor:'#0033FF'
-        }:{}}>
-            <Grid item lg={4} xs={12} sx={{textAlign:'center'}}>
-            <Image 
-                src={width > 800 ? '/158.png':'/158Dark.png'}
-                alt='logo'
-                className={styles.process}
-                width={width > 800 ? 150 : 75}
-                height={width > 800 ? 70 : 40}
-                priority
-                />
+            <Grid container justifyContent={'center'} sx={{display:{lg:'none',xs:'flex'}}}>
+                <Typography variant={'h1'} sx={darkHallow}>
+                    Certifications
+                </Typography>
             </Grid>
-            <Grid item lg={4} xs={6} sx={{textAlign:'center'}}>
-            <Image 
-                src={width > 800 ? '/138.png': '/138Dark.png'}
-                alt='logo'
-                className={styles.process}
-                width={width > 800 ? 180 : 100}
-                height={width > 800 ? 70 : 40}
-                priority
-                />
-            </Grid>
-            <Grid item lg={4} xs={6} sx={{textAlign:'center'}}>
-            <Image 
-                src={width > 800 ? '/139.png':'/139Dark.png'}
-                alt='logo'
-                className={styles.process}
-                width={width > 800 ? 180 : 100}
-                height={width > 800 ? 70 : 40}
-                priority
-                />
-            </Grid>
-            </Grid>
-
-            <Grid container justifyContent={'center'}>
-            <div >
-                        <Image
-                        src="/vectorLight.png"
-                        alt="vector"
-                        className={styles.vector}
-                        height={127}
-                        width={99}
-                        priority
+        <Grid container mt={3} justifyContent={{xs:'space-between',lg: 'center'}} alignItems={'center'} sx={{backgroundColor:{lg:'#0033FF',xs:"#fff"},height:{lg:'300px',xs:'200'}}}>
+            <Grid item lg={4} xs={12} sx={{textAlign:'center'}} mt={{lg:12,xs: 4}}>
+            <Box
+                        component="img"
+                        src='158.png'
+                        alt={'logo'}
+                        sx={{
+                            display:{lg:'inline-flex',xs:'none'},
+                        }}
                         />
-                    </div>
+            <Box
+                        component="img"
+                        src='158Dark.png'
+                        alt={'logo'}
+                        sx={{
+                            display:{lg:'none',xs:'inline-flex'},
+                        }}
+                        />
             </Grid>
+            <Grid item lg={4} xs={6} sx={{textAlign:'center'}} mt={{lg:12,xs: 4}}>
+            <Box
+                        component="img"
+                        src='138.png'
+                        alt={'logo'}
+                        sx={{
+                            display:{lg:'inline-flex',xs:'none'},
+                        }}
+                        />
+            <Box
+                        component="img"
+                        src='138Dark.png'
+                        alt={'logo'}
+                        sx={{
+                            display:{lg:'none',xs:'inline-flex'},
+                        }}
+                        />
+            </Grid>
+            <Grid item lg={4} xs={6} sx={{textAlign:'center'}} mt={{lg:12,xs: 4}}>
+            <Box
+                        component="img"
+                        src='139.png'
+                        alt={'logo'}
+                        sx={{
+                            display:{lg:'inline-flex',xs:'none'},
+                        }}
+                        />
+            <Box
+                        component="img"
+                        src='139Dark.png'
+                        alt={'logo'}
+                        sx={{
+                            display:{lg:'none',xs:'inline-flex'},
+                        }}
+                        />
+            </Grid>
+                <Typography variant='body1' sx={{color:'#fff',display:{lg:'block',xs:'none'}}} pt={5}>
+                    Compliances & Certifications
+                </Typography>
+ </Grid>
+
         <Grid container sx={{
-                backgroundColor:width < 800 ? "#000" : "#ffffff",
-                color:width < 800 ?"#ffffff" : "#000",
-                }}>
-            {width  > 800 && 
-            <Grid container  xs={12} sm={12} >
-                    <Box className={styles.roundDiv2} sx={{backgroundColor:'#000000',marginLeft:'auto',marginRight:'auto'}} >
+                backgroundColor:{xs:"#000",lg:"#fff"},
+                color:{xs:"#ffffff",lg:"#000"},
+                borderRadius: {xs:"25% 5% 25% 5%" ,lg:"0"}
+                }} mt={5}>
+            <Grid container  xs={12} sm={12} sx={{display:{lg:'block',xs:'none'}}}>
+                    <Box  sx={circleDark} >
                         <Image 
                             src='/vectorLight.png'
                             alt='vector'
                             width={100}
                             height={122}
-                            className={styles.vector}
+                            style={{height: '122px',
+                                width: '100px',
+                                marginLeft: '45px',
+                                marginTop: '30px',}}
                             priority
                         />
                     </Box>
                 </Grid>
-            }
             <Grid container justifyContent={'center'} >
-            <Typography variant='h2' className={styles.h2}  component={'h2'} mt={5}>
+            <Typography variant='h2' sx={h2} component={'h2'} mt={5}>
                         Let's talk  
             </Typography>
             </Grid>
-            <Grid container justifyContent={'center'} mb={5} >
+            <Grid container mt={2}  justifyContent={'center'} lg={12} sx={{display:{lg:'flex',xs:'none'}}} mb={5}>
                     <Grid item>
-                        <Button variant={'outlined'} onClick={()=>{}} sx={{
-                            width:'140px',
-                            height:'50px',
-                            border:width > 800 ? '1px solid #000000' : '2px solid #ffffff',
-                            borderRadius:'50px',
-                            color:width > 800 ? '#000' : '#fff',
-                        }}
-                            >
+                        <Button variant={'outlined'} onClick={()=>{}} sx={buttonPrimary}>
                             Discover Me
                         </Button>
                     </Grid>
                     <Grid item>
-                    <Button variant={'outlined'} onClick={()=>{}} 
-                    sx={{width:'50px',height:'50px',borderRadius:'50%',
-                    border:width > 800 ? '1px solid #000000' : '2px solid #ffffff',
-                    marginLeft:'10px'}}>
-                        <Image
-                        src={width > 800 ? '/right.png':'/rightLight.png'}
+                    <Button variant={'outlined'} onClick={()=>{}} sx={circle}>
+                        <img
+                        src={'/right.png'}
                         alt={'right arrow'}
                         width={35}
                         height={30}
                         style={{marginTop:'5px'}}
-                        priority/>
+                        loading='eager'
+                        />
+                    </Button>
+                    </Grid>
+                    </Grid>
+            <Grid container justifyContent={'center'} mb={5} sx={{display:{lg:'none',xs:'flex'}}} >
+                    <Grid item>
+                        <Button variant={'outlined'} onClick={()=>{}} sx={buttonPrimaryBlack}>
+                            Discover Me
+                        </Button>
+                    </Grid>
+                    <Grid item>
+                    <Button variant={'outlined'} onClick={()=>{}} sx={circleBlack}>
+                        <Box
+                        component="img"
+                        src='rightLight.png'
+                        alt={'right arrow'}
+                        sx={{
+                            display:{lg:'none',xs:'block'},
+                            width:'30px',
+                            height:'25px'
+                        }}
+                        />
                     </Button>
                     </Grid>
                 </Grid>

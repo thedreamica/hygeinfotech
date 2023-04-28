@@ -40,23 +40,23 @@ export const process = [
     },
     {
         id:'02',
-        topic:'Empathize',
-        text:'Understand end user needs pain points through research and observation'
+        topic:'Define',
+        text:'Create a clear problem that captures end user needs and business goals'
     },
     {
         id:'03',
-        topic:'Empathize',
-        text:'Understand end user needs pain points through research and observation'
+        topic:'Ideate',
+        text:'Brainstrom potential solutions using design thinking tools and techniques'
     },
     {
         id:'04',
-        topic:'Empathize',
-        text:'Understand end user needs pain points through research and observation'
+        topic:'Prototype',
+        text:'Test the prototype with end-users togather feedback and refine the solutions'
     },
     {
         id:'05',
-        topic:'Empathize',
-        text:'Understand end user needs pain points through research and observation'
+        topic:'Test',
+        text:'Create a rough prototype that can be tested and refined'
     },
 
 ]
@@ -83,3 +83,5 @@ export const getIntouch = [
         text:'Instagram',
     },
 ]
+
+export const imagePaths = ['/8201.png','/8202.png','/8203.png','/8204.png','/8205.png','/8206.png','/8207.png','/8208.png']
