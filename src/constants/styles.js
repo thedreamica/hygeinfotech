@@ -27,8 +27,8 @@ export const caption = {
 }
 
 export const buttonPrimary = {
-    width:'140px',
-    height:'50px',
+    width:'150px',
+    height:'71px',
     border:'1px solid #000000',
     borderRadius:'50px',
     background:'linear-gradient(to left, white 50%, #EEB609 50%) right',
@@ -42,8 +42,8 @@ export const buttonPrimary = {
 }
 
 export const circle = {
-    width:'50px',
-    height:'50px',
+    width:'71px',
+    height:'72px',
     borderRadius:'50%',
     border:'1px solid #000000',
     marginLeft:'10px',
@@ -83,8 +83,8 @@ export const circleDark={
 }
 
 export const circleBlack = {
-    width:'50px',
-    height:'50px',
+    width:'71px',
+    height:'71px',
     borderRadius:'50%',
     border:'1px solid #fff',
     marginLeft:'10px',

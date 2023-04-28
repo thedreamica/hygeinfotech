@@ -19,7 +19,7 @@ const Preface = () => {
     },[])
   return (
       <div>
-            <Grid container justifyContent={'center'} mt={5}>
+            <Grid container justifyContent={'center'} mt={5} ml={{lg:3,xs:2}}>
                 <Grid item lg={9} xs={12}>
                     <Typography variant='h2' sx={h2}  component={'h2'}>
                         Reshape the future 
@@ -27,7 +27,7 @@ const Preface = () => {
                     <Typography variant='h2' sx={h2}  component={'h2'}>
                         With our
                     </Typography>
-                    <Grid container lg={11} justifyContent={'space-between'}>
+                    <Grid container lg={12} justifyContent={'space-between'}>
                     <Typography sx={h2Primary} variant='h2' component={'h2'}  >
                         Revenue
                         <Box component="div" sx={h2PrimaryHollow}>
@@ -35,21 +35,45 @@ const Preface = () => {
                         </Box>
                     </Typography>
                     </Grid>
-                    <Grid container xs={12} lg={9} mt={2}>
-                    <Typography align='left' variant='caption' sx={caption}>
+                </Grid>
+             <Grid container lg={9} sm={12} mt={2}  >
+                <Grid item lg={7} xs={10} >
+                    <Typography align='left' variant='caption' sx={caption} >
                     Discover new heights with our IT services.
                     Our innovative approaches for RCM, digital marketing, 
                     and DevOps can turn your business operations into a revenue-generating powerhouse.
                     Let us show you how to leverage these services and take your business to the next level.
                     </Typography>
+                </Grid>
+                    <Grid item lg={2} ml={1} sx={{display:{lg:'inline-flex',xs:'none'}}}>
+                <a href="#whatSetUsApart">
+                    <Box sx={{
+                        height: {lg:'195px',xs:'76px'},
+                        width:{lg:'195px',xs:'76px'},
+                        borderRadius:'50%',
+                        border:'1px solid #000',
+                        marginLeft:'50px',
+                        marginTop:'30px',
+                        opacity:0.3
+                    }}>
+                        <Box
+                           component={'img'}
+                           src='vector.png'
+                            alt='vector'
+                            sx={{width:{lg:'100px',xs:'54px'},height:{lg:'122px',xs:'56px'}, marginLeft: {lg:'45px',xs:'12px'},
+                            marginTop: {lg:'30px',xs:'7px'}}}
+                        />
+                    </Box>
+                    </a>
                     </Grid>
-                    <Grid container mt={2}>
+                    </Grid>
+                <Grid container mt={2} lg={9}>
                     <Grid item>
                         <Button variant={'outlined'} onClick={()=>{}} sx={buttonPrimary}>
                             Discover Me
                         </Button>
                     </Grid>
-                    <Grid item>
+                    <Grid item ml={-1}>
                     <Button variant={'outlined'} onClick={()=>{}} sx={circle}>
                         <img
                         src={'right.png'}
@@ -62,19 +86,18 @@ const Preface = () => {
                     </Button>
                     </Grid>
                     </Grid>
-                </Grid>
             </Grid>
             <Grid container ml={scrollY/15} >
                 <Typography sx={hLarge} >
                     hyge
                 </Typography>
             </Grid>
-            <Grid container>
+            <Grid container id="whatSetUsApart">
                 <Typography variant={'body2'} align='left' ml={2} sx={{fontSize:'20px',color:'#afafaf'}} mt={2} >
                     What set us apart?
                 </Typography>
             </Grid>
-            <Grid container justifyContent={'right'}>
+            <Grid container justifyContent={'center'}>
                 <Grid item xs={12} sm={8} ml={{lg:0,xs:3}} mt={2}>
                     <Typography variant='h4' sx={{
                         fontFamily: 'Poppins',
@@ -94,25 +117,6 @@ const Preface = () => {
                     }} variant={'h6'} mt={2}>
                     Our solutions are tailored to your needs, with hyper-flexibility, expert customer support, continuous improvement, and collaborative partnerships. Experience the comfort of working with us and streamline your business processes seamlessly.
                     </Typography>
-                </Grid>
-                <Grid item xs={12} sm={2}  mt={{lg:0,xs:5}}  >
-                    <Box sx={{
-                        height: {lg:'195px',xs:'76px'},
-                        width:{lg:'195px',xs:'76px'},
-                        borderRadius:'50%',
-                        border:'2px solid #EEB609',
-                        marginTop:{lg:'350px',xs:'20px'},
-                        marginLeft:'auto',
-                        marginRight:'auto',
-                    }}>
-                        <Box
-                           component={'img'}
-                           src='vector.png'
-                            alt='vector'
-                            sx={{width:{lg:'100px',xs:'54px'},height:{lg:'122px',xs:'56px'}, marginLeft: {lg:'45px',xs:'12px'},
-                            marginTop: {lg:'30px',xs:'7px'}}}
-                        />
-                    </Box>
                 </Grid>
             </Grid>
             <Grid container justifyContent={'center'} mt={12}>
@@ -164,9 +168,9 @@ const Preface = () => {
                 <Grid item xs={12} sx={{textAlign:'center',display:{lg:'none',xs:'block'}}} mt={3}> 
                     <Grid container justifyContent={'center'} mt={3}>
                     {
-                        process.map((proc)=>{
+                        process.map((proc,index)=>{
                             return (
-                                <Grid item justifyContent={'center'} xs={8}>
+                                <Grid item justifyContent={'center'} xs={8} key={index} mt={1}>
                                     <Typography variant={'h5'} sx={{fontWeight:'600'}} align='center'>
                                         {proc.id}
                                     </Typography>
@@ -301,22 +305,22 @@ const Preface = () => {
                     </Box>
                 </Grid>
             <Grid container justifyContent={'center'} >
-            <Typography variant='h2' sx={h2} component={'h2'} mt={5}>
+            <Typography variant='h2' sx={h2} component={'h2'} mt={5} mb={5}>
                         Let's talk  
             </Typography>
             </Grid>
-            <Grid container mt={2}  justifyContent={'center'} lg={12} sx={{display:{lg:'flex',xs:'none'}}} mb={5}>
+            <Grid container mt={4}  justifyContent={'center'} lg={12}   sx={{display:{lg:'flex',xs:'none'}}} mb={5}>
                     <Grid item>
                         <Button variant={'outlined'} onClick={()=>{}} sx={buttonPrimary}>
                             Discover Me
                         </Button>
                     </Grid>
-                    <Grid item>
+                    <Grid item ml={-1}>
                     <Button variant={'outlined'} onClick={()=>{}} sx={circle}>
                         <img
                         src={'/right.png'}
                         alt={'right arrow'}
-                        width={35}
+                        width={30}
                         height={30}
                         style={{marginTop:'5px'}}
                         loading='eager'
@@ -330,7 +334,7 @@ const Preface = () => {
                             Discover Me
                         </Button>
                     </Grid>
-                    <Grid item>
+                    <Grid item ml={-1}>
                     <Button variant={'outlined'} onClick={()=>{}} sx={circleBlack}>
                         <Box
                         component="img"
@@ -338,8 +342,8 @@ const Preface = () => {
                         alt={'right arrow'}
                         sx={{
                             display:{lg:'none',xs:'block'},
-                            width:'30px',
-                            height:'25px'
+                            width:'20px',
+                            height:'20px'
                         }}
                         />
                     </Button>

@@ -18,7 +18,7 @@ const ImageGrid = (scrollY) => {
 
 
   return (
-    <Grid container lg={12} xs={12} justifyContent={'center'} ml={-(scrollY.scrollY/80)+25}>
+    <Grid container lg={12} xs={12} justifyContent={'center'} ml={{lg:-(scrollY.scrollY/80)+25,xs: 0}}>
         {
             imagePaths.map((image,index)=>{
                 return(
@@ -27,7 +27,7 @@ const ImageGrid = (scrollY) => {
                         component='img'
                         src={image}
                         alt={'difference' + index}
-                        sx={{width:{lg:'300px',sm:'210px',xs:'180px'},height:{lg:'300px',sm:'210px',xs:'180px'}}}
+                        sx={{width:{lg:'300px',sm:'210px',xs:'172px'},height:{lg:'300px',sm:'210px',xs:'172px'}}}
                         />
                     </Grid>
                 )

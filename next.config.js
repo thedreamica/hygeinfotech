@@ -3,9 +3,16 @@
 const nextConfig = {
   reactStrictMode: true,
   images:{
-    domains:['imgur.com'],
-    formats: ["image/webp"],
+    remotePatterns: [
+      {
+          protocol: 'https',
+          hostname: '**',
+          port: '',
+          pathname: '**',
+      },
+  ],
   }
+  
 }
 
 module.exports = nextConfig
