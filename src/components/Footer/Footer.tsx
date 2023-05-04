@@ -64,8 +64,8 @@ const Footer = () => {
                   <Typography variant={'h6'}>
                     Links
                   </Typography>
-                  {navItem.map(item=>{
-                    return (<Typography variant={'body2'} mt={2}>
+                  {navItem.map((item, index)=>{
+                    return (<Typography key={`link-${index}`} variant={'body2'} mt={2}>
                       {item.text}
                     </Typography> )
                   })}
