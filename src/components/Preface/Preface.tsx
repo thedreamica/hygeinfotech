@@ -306,7 +306,7 @@ const Preface = () => {
                 </Grid>
             <Grid container justifyContent={'center'} >
             <Typography variant='h2' sx={h2} component={'h2'} mt={5} mb={5}>
-                        Let's talk  
+                        Let&#39;s talk  
             </Typography>
             </Grid>
             <Grid container mt={4}  justifyContent={'center'} lg={12}   sx={{display:{lg:'flex',xs:'none'}}} mb={5}>
