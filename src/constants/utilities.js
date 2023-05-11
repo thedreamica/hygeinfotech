@@ -22,14 +22,14 @@ export const navItem = [
 ]
 
 export const differences=[
-    {value:"15%+",item:"Claim errors"}, 
-    {value:"50%",item:"Wasted Ad Spend"},
-    {value:"90%",item:"lack of patience data-quality"},
-    {value:"7%",item:"Average denial rate"},
-    {value:"14.90",item:"hrs/week on per authourization"},
-    {value:"75%",item:"Devops failure"},
-    {value:"50%",item: "Higher labour costs"},
-    {value:"46%",item:"Integration issue"}
+    {value:"6%+",item:"Increase revenue recovery"}, 
+    {value:"25%",item:"Reduce claim denials"},
+    {value:"75%",item:"Reduce time"},
+    {value:"65%",item:"Increase data quality"},
+    {value:"100%",item:"Remove integration issues"},
+    {value:"50%",item:"Reduce Labour cost"},
+    {value:"100%",item: " Implement successfully"},
+    {value:"20%",item:"Improve Ad conversion"}
 ]
 
 export const process = [
