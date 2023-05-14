@@ -84,7 +84,7 @@ const Preface = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container ml={scrollY / 15} mt={-5}>
+        <Grid container mt={-5}>
           <Typography sx={hLarge}>hyge</Typography>
         </Grid>
       </Box>
@@ -201,7 +201,7 @@ const Preface = () => {
       {/* Divider */}
       <Box height="4px" bgcolor="#034AB2" my={2} />
       {/* Services */}
-      <Box component="section" py={4}>
+      <Box component="section" py={4} px={4}>
         <Typography sx={{ fontSize: "20px", color: "#afafaf" }} px={4}>
           Services
         </Typography>
@@ -224,14 +224,14 @@ const Preface = () => {
         </Grid>
         {/* Solutions  */}
         <Grid container justifyContent="center" mt={10}>
-          <Grid container item lg={11} sx={{ borderBottom: "1px solid #707070" }}>
-            <Grid item lg={10} xs={12}>
-              <SolutionsList />
-            </Grid>
+          <Grid container item lg={11} sx={{ borderBottom: "1px solid #707070",flexDirection:{lg:'row-reverse',sm:'column'} }}>
             <Grid item lg={2} xs={12}>
               <Typography sx={hLargeVertical}>
                 Solutions
               </Typography>
+            </Grid>
+            <Grid item lg={10} xs={12}>
+              <SolutionsList />
             </Grid>
           </Grid>
         </Grid>
@@ -239,17 +239,19 @@ const Preface = () => {
       {/* process */}
       <Box component="section" py={4}>
         <Grid container justifyContent="center">
-          <Grid item lg={11} xs={12}>
+          <Grid item lg={11} xs={12} px={4}>
             <Typography sx={{ fontSize: "20px", color: "#afafaf" }}>
               How we do?
             </Typography>
             <Typography
               variant={"h2"}
+              
               sx={{
                 fontWeight: "700",
                 fontSize: { lg: "150px", md: "75px", xs: "50px" },
                 lineHeight: { lg: "130px", xs: "normal" },
                 color: "#0033FF",
+                
               }}
             >
               process
@@ -321,10 +323,11 @@ const Preface = () => {
                       variant={"h5"}
                       sx={{ fontWeight: "600" }}
                       align="center"
+                      mb={3}
                     >
                       {proc.id}
                     </Typography>
-                    <Grid container justifyContent={"center"}>
+                    <Grid container justifyContent={"center"} mb={3}>
                       <Chip
                         variant="outlined"
                         label={proc.topic}
@@ -335,9 +338,10 @@ const Preface = () => {
                           fontFamily: "poppins",
                           fontWeight: "900",
                         }}
+                        
                       ></Chip>
                     </Grid>
-                    <Typography variant="body1" align="center">
+                    <Typography variant="body1" align="center" mb={4}>
                       {proc.text}
                     </Typography>
                   </Grid>
@@ -348,7 +352,7 @@ const Preface = () => {
         </Grid>
       </Box>
       {/* Way of thinking */}
-      <Box component="section" py={4}>
+      <Box component="section" py={4} px={4}>
         <Grid container justifyContent="center">
           <Grid item lg={11}>
             <Typography sx={{ fontSize: "20px", color: "#afafaf" }}>
@@ -359,6 +363,7 @@ const Preface = () => {
                 src="/girl-banner.png"
                 width="900"
                 height="540"
+                className="roundedImage"
                 alt="girl-banner"
               />
             </Box>
@@ -407,10 +412,11 @@ const Preface = () => {
           container
           mt={3}
           py={5}
+          px={4}
           justifyContent={{ xs: "space-between", lg: "center" }}
           alignItems={"center"}
           sx={{
-            backgroundColor: { lg: "#0033FF", xs: "#fff" },
+            backgroundColor: { lg: "#0033FF", xs: "#0033FF" },
             minHeight: { lg: "300px", xs: "200" },
           }}
         >
@@ -527,7 +533,7 @@ const Preface = () => {
               <Typography
                 variant="h2"
                 sx={{
-                  fontSize: "150px",
+                  fontSize: { lg: "150px", sm: "50px" },
                   fontWeight: 700,
                 }}
                 component={"h2"}

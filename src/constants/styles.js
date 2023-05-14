@@ -59,7 +59,7 @@ export const circle = {
 export const hLarge = {
     WebkitTextStroke:'0.1rem #000',
     WebkitTextFillColor:'#ffffff',
-    fontSize:{lg:'300px',  xs:'150px'},
+    fontSize: { lg: "300px", sm: "150px", xs: "120px" },
     lineHeight: "normal",
     opacity:0.4,
     zIndex: -1,
@@ -67,7 +67,8 @@ export const hLarge = {
 
 export const hLargeVertical = {
     ...hLarge,
-    writingMode: "vertical-rl",
+    writingMode:{lg:'vertical-rl', sm:'horizontal-tb'},
+    fontSize: { lg: "300px", sm: "150px", xs: "70px" },
     lineHeight: 0.8,
 }
 
@@ -111,6 +112,8 @@ export const circleBlack = {
         borderColor:'#fff',
     }
 }
+
+
 
 let buttonBlack = {...buttonPrimary}
 buttonBlack.background = 'linear-gradient(to left, black 50%, #EEB609 50%) right';

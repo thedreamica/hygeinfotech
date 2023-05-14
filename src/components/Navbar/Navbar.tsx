@@ -47,7 +47,7 @@ const Navbar = () => {
             container
             justifyContent={"space-evenly"}
             alignItems={"center"}
-            sx={{ height: "100%" }}
+            sx={{ height: "100%"}}
           >
             {navItem.map((item, index) => {
               return (
@@ -93,6 +93,7 @@ const Navbar = () => {
                     color: "#000000",
                     textDecoration: active === index ? "underline" : "none",
                     textDecorationColor: "#EEB609",
+                    padding:'0 40px'
                   }}
                   onClick={() => {
                     setActive(index);

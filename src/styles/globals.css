@@ -42,3 +42,12 @@ a:hover > * {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+@media(max-width:600px){
+  .roundedImage{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+  }
+}

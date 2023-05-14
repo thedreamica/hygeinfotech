@@ -20,11 +20,12 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        borderRadius: { lg: "25% 25% 0 0 ", xs: "0%" },
-        backgroundColor: { lg: "#00051A", xs: "#fff" },
-        color: { lg: "#ffffff", xs: "#000000" },
+        borderRadius: { lg: "25% 25% 0 0 ", xs: "88px 80px 0 0" },
+        backgroundColor: { lg: "#00051A", xs: "#00051A" },
+        color: { lg: "#ffffff", xs: "#fff" },
       }}
       py={5}
+      px={4}
     >
       <Grid container alignItems={"center"} mt={{ lg: 0, xs: 5 }}>
         <Grid
@@ -108,7 +109,7 @@ const Footer = () => {
               <Typography
                 component={"h6"}
                 mt="4px"
-                sx={{ fontSize: "24px", fontWeight: 700 }}
+                sx={{ fontSize: {lg:"24px",sm:"20px"}, fontWeight: 700,color:'#fff',verticalAlign:'middle' }}
               >
                 <span dangerouslySetInnerHTML={{
                   __html : emailIcon,

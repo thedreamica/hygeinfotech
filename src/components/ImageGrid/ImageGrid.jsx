@@ -40,8 +40,8 @@ const ImageGrid = (scrollY) => {
               justifyContent="center"
               alignItems="center"
               sx={{
-                width: { lg: "300px", sm: "210px", xs: "172px" },
-                height: { lg: "300px", sm: "210px", xs: "172px" },
+                width: { lg: "300px", sm: "210px", xs: "260px" },
+                height: { lg: "300px", sm: "210px", xs: "260px" },
                 border: "1px solid #6C7A89",
                 borderRadius: "50%",
               }}
