@@ -1,14 +1,14 @@
 export const h2 = {
     fontSize:{lg:'60px',xs:'35px',md:'45px'},
-    fontFamily:'Poppins',
-    fontWeight:900,
+    letterSpacing: 'normal',
+    fontWeight: 800,
 }
 
 export const h2PrimaryHollow = {
     ...h2,
-    WebkitTextStroke:' 0.1px #EEB609',
+    WebkitTextStroke:' 1px #EEB609',
     WebkitTextFillColor:'#ffffff',
-    display:'inline'
+    display:'inline',
 }
 
 export const h2Primary = {
@@ -20,25 +20,24 @@ export const caption = {
     fontFamily: 'Montserrat',
     fontStyle: 'normal',
     fontWeight: '500',
-    fontSize:{xs:'13px',lg:'26px',md:'18px'},
+    fontSize:{xs:'13px',lg:'25px',md:'18px'},
     lineHeight:{xs:'20px',lg:'40px',md:'30px'},
-    letterSpacing: '0.01em',
     color: '#6C7A89',
 }
 
 export const buttonPrimary = {
-    width:'150px',
-    height:'71px',
+    minHeight: '72px',
     border:'1px solid #000000',
+    padding: '15px 32px 17px',
     borderRadius:'50px',
     background:'linear-gradient(to left, white 50%, #EEB609 50%) right',
     backgroundSize:'200% 100%',
     color:'#000',
     '&:hover':{
         backgroundPosition: 'left',
-        transition:'all 2s ease',
+        transition:'all 1s ease',
         borderColor:'#000',
-    }
+    },
 }
 
 export const circle = {
@@ -61,7 +60,15 @@ export const hLarge = {
     WebkitTextStroke:'0.1rem #000',
     WebkitTextFillColor:'#ffffff',
     fontSize:{lg:'300px',  xs:'150px'},
+    lineHeight: "normal",
     opacity:0.4,
+    zIndex: -1,
+}
+
+export const hLargeVertical = {
+    ...hLarge,
+    writingMode: "vertical-rl",
+    lineHeight: 0.8,
 }
 
 export const darkHallow = {
@@ -70,6 +77,14 @@ export const darkHallow = {
     WebkitTextStroke:'0.02em black',
     WebkitTextFillColor:'#ffffff',
     fontSize:{lg:'80px',xs:'40px'}
+}
+
+export const lightHallow = {
+    fontWeight:'500',
+    fontFamily:'Poppins',
+    WebkitTextStroke:'0.02em white',
+    WebkitTextFillColor:'transparent',
+    fontSize:{lg:'40px',xs:'40px'}
 }
 
 export const circleDark={
