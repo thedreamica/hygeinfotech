@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hygeinfotech.com/api/my-sitemap
