@@ -171,11 +171,6 @@ export const getIntouch = [
     text: "Twitter",
   },
   {
-    link: "/discord.png",
-    darkLink: "/discordDark.png",
-    text: "Discord",
-  },
-  {
     link: "/insta.png",
     darkLink: "/instaDark.png",
     text: "Instagram",
