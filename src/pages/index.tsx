@@ -12,7 +12,7 @@ const Home = () => {
           name="google-site-verification"
           content="yVSfOy45C1HSMNZE9S_HGJHlvIaJsqDPMfksNuMI5bo"
         />
-        <link rel="icon" href="/logo.PNG" />
+        <link rel="icon" href="/hyge-logo.png" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Poppins|Monteserrat"
