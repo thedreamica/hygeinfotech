@@ -12,7 +12,7 @@ export const navItem = [
     link: "/",
   },
   {
-    text: "Organisation",
+    text: "Why us",
     link: "/",
   },
   {
