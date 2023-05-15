@@ -52,7 +52,7 @@ const Navbar = () => {
             {navItem.map((item, index) => {
               return (
                 <Grid item key={index}>
-                  <Link href="/">
+                  <Link href={item.link}>
                     <Typography
                       sx={{
                         fontStyle: "normal",
