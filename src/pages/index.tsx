@@ -9,6 +9,7 @@ const Home = () => {
         <Head>
             <title>Hyge</title>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="google-site-verification" content="yVSfOy45C1HSMNZE9S_HGJHlvIaJsqDPMfksNuMI5bo" />
             <link rel="icon" href="/logo.PNG" />
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Monteserrat"></link>
         </Head>
