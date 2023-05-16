@@ -1,4 +1,11 @@
-import { Grid, Box, Typography, Chip, Button, Stack } from "@mui/material";
+import {
+  Grid,
+  Box,
+  Typography,
+  Chip,
+  Button,
+  Stack,
+} from "@mui/material";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { ImageGrid, SolutionsList } from "@components";
@@ -19,6 +26,7 @@ import {
 import { hLargeVertical, lightHallow } from "@/constants/styles";
 import { BorderBottom } from "@mui/icons-material";
 import SliderGrid from "../ImageGrid/SliderGrid";
+import ContactCard from "../Contact/ContactCard";
 
 const Preface = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -234,10 +242,10 @@ const Preface = () => {
               flexDirection: { lg: "row-reverse", sm: "column" },
             }}
           >
-            <Grid item lg={2} xs={12}>
+            <Grid item lg={3} xs={12}>
               <Typography sx={hLargeVertical}>Solutions</Typography>
             </Grid>
-            <Grid item lg={10} xs={12}>
+            <Grid item lg={9} xs={12}>
               <SolutionsList />
             </Grid>
           </Grid>
@@ -402,7 +410,7 @@ const Preface = () => {
         </Grid>
       </Box>
       {/* Compliances & Certifications */}
-      <Box component="section" py={4}>
+      <Box component="section" pt={4}>
         <Grid
           container
           justifyContent={"center"}
@@ -487,75 +495,59 @@ const Preface = () => {
         </Grid>
       </Box>
       {/* Let's talk */}
-      <Box component="section" py={4} mt={5} mb={15} id="contact-us">
-        <Grid container justifyContent="center">
-          <Grid item>
-            <Stack
-              direction="column"
-              justifyContent="center"
-              alignItems="center"
-              spacing={5}
-            >
-              <Box
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                sx={{
-                  width: { lg: "212px", xs: "50px" },
-                  height: { lg: "212px", xs: "50px" },
-                  border: "1px solid #6C7A89",
-                  borderRadius: "50%",
-                }}
-              >
-                <Image
-                  src="/vector.png"
-                  width={100}
-                  height={120}
-                  alt={"arrow"}
-                />
-              </Box>
+      <Box component="section" py={{lg:4,xs:0}} px={4} id="contact-us" sx={{
+        backgroundColor: { lg: "#00051A", xs: "#00051A" },
+        color: { lg: "#ffffff", xs: "#fff" },
+      }}>
+        <Stack
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+          spacing={5}
+        >
+          <Grid container mt={10} justifyContent={"center"}>
+            <Grid item lg={7} xs={12}>
               <Typography
                 variant="h2"
+                mt={15}
                 sx={{
-                  fontSize: { lg: "150px", sm: "50px" },
+                  fontSize: { lg: "130px", sm: "50px" },
                   fontWeight: 700,
+                  marginTop: {lg:15,xs:0},
+                  marginBottom: {lg:8,xs:0},
+                  textAlign:{lg:"left",xs:'center'}
                 }}
                 component={"h2"}
               >
                 Let&#39;s talk!
               </Typography>
-              <Grid container mt={10} justifyContent={"center"}>
-                <Grid item>
-                  <Button
-                    variant={"outlined"}
-                    onClick={() => {}}
-                    sx={buttonPrimary}
-                  >
-                    <Typography
-                      sx={{
-                        fontSize: { lg: "25px", sm: "17px" },
-                      }}
-                    >
-                      Contact us
-                    </Typography>
-                  </Button>
-                </Grid>
-                <Grid item ml={-1}>
-                  <Button variant={"outlined"} onClick={() => {}} sx={circle}>
-                    <img
-                      src={"/right.png"}
-                      alt={"right arrow"}
-                      width={30}
-                      height={30}
-                      style={{ marginTop: "5px" }}
-                      loading="eager"
-                    />
-                  </Button>
-                </Grid>
-              </Grid>
-            </Stack>
+              <Box
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                sx={{
+                  width: { lg: "250px", xs: "170px" },
+                  height: { lg: "250px", xs: "170px" },
+                  border: "1px solid #FFCC00",
+                  borderRadius: "50%",
+                  margin: "auto",
+                  marginBottom: {lg:0,xs:5}
+                }}
+              >
+                <Image
+                  src="/letsTalk.svg"
+                  width={100}
+                  height={120}
+                  alt={"arrow"}
+                />
+              </Box>
+            </Grid>
+            <Grid item lg={5} xs={12}>
+               <ContactCard/>
+            </Grid>
+            <Grid item ml={-1}></Grid>
           </Grid>
-        </Grid>
+        </Stack>
       </Box>
     </>
   );
