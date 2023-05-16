@@ -26,7 +26,7 @@ export const caption = {
 };
 
 export const buttonPrimary = {
-  minHeight: "72px",
+  minHeight: {lg:'72px',xs:'44px'},
   border: "1px solid #000000",
   padding: "15px 32px 17px",
   borderRadius: "50px",
@@ -41,8 +41,8 @@ export const buttonPrimary = {
 };
 
 export const circle = {
-  width: "71px",
-  height: "72px",
+  width: {lg:'72px',xs:'60px'},
+  height: {lg:'72px',xs:'60px'},
   borderRadius: "50%",
   border: "1px solid #000000",
   marginLeft: "10px",

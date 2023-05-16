@@ -5,19 +5,19 @@ export const navItem = [
   },
   {
     text: "Services",
-    link: "/",
+    link: "#services",
   },
   {
     text: "Resources",
-    link: "/",
+    link: "#resources",
   },
   {
     text: "Why us",
-    link: "/",
+    link: "#why-us",
   },
   {
     text: "Contact us",
-    link: "/",
+    link: "#contact-us",
   },
 ];
 
