@@ -169,7 +169,7 @@ const Preface = () => {
         </Grid>
       </Box>
       {/* Difference  */}
-      <Box component="section" py={4} id='why-us'>
+      <Box component="section" py={4} id="why-us">
         <Grid container justifyContent={"center"}>
           <Typography
             variant={"h2"}
@@ -293,7 +293,7 @@ const Preface = () => {
           <Box
             component="img"
             src="processD.png"
-            alt={"process"}
+            alt={"hygeinfotech process"}
             sx={{
               display: { lg: "block", xs: "none" },
               width: "90%",
@@ -302,7 +302,7 @@ const Preface = () => {
           <Box
             component="img"
             src="processM.png"
-            alt={"process"}
+            alt={"hygeinfotech process"}
             sx={{
               display: { lg: "none", xs: "block" },
               width: "90%",
@@ -368,7 +368,7 @@ const Preface = () => {
                 width="900"
                 height="540"
                 className="roundedImage"
-                alt="girl-banner"
+                alt="hygeinfotech girl-banner"
               />
             </Box>
             <Grid container>
@@ -435,7 +435,7 @@ const Preface = () => {
             <Box
               component="img"
               src="hipa.svg"
-              alt={"logo"}
+              alt={"hygeinfotech logo"}
               sx={{
                 display: { xs: "inline-flex" },
                 margin: "auto",
@@ -452,7 +452,7 @@ const Preface = () => {
             <Box
               component="img"
               src="ahima.svg"
-              alt={"logo"}
+              alt={"hygeinfotech logo"}
               sx={{
                 display: { xs: "inline-flex" },
                 margin: "auto",
@@ -469,7 +469,7 @@ const Preface = () => {
             <Box
               component="img"
               src="aapc.svg"
-              alt={"logo"}
+              alt={"hygeinfotech logo"}
               sx={{
                 display: { xs: "inline-flex" },
                 margin: "auto",
