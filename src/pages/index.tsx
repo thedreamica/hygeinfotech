@@ -24,7 +24,7 @@ const Home = () => {
         <title>Hyge Infotech</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Hyge Infotech: Empowering businesses with comprehensive IT services. From cutting-edge software development to secure network solutions, we deliver tailored technology solutions to drive your success. Trust our expertise for seamless integration, enhanced efficiency, and unmatched support. Unlock your business's full potential with Hyge Infotech today." />
-
+        <meta name="keywords" content="Hyge Infotech, hygeinfotech, Hyge Info Tech" />
         <meta property="og:title" content="Hyge Infotech | Catalyze your success with transformative tech" />
 <meta property="og:type" content="website" />
 {/* <meta property="og:image" content="" /> */}
