@@ -16,7 +16,7 @@ const Navbar = () => {
             <Grid item xs={8} marginLeft={{ lg: 5}}>
               <Image
                 src={"/infotechLogo.png"}
-                alt="Hype Logo"
+                alt="hygeinfotech Logo"
                 height={98}
                 width={195}
                 priority
@@ -31,7 +31,7 @@ const Navbar = () => {
             >
               <Image
                 src={!visible ? "/hamburgerOutlined.png" : "/cancel.png"}
-                alt="button"
+                alt="hygeinfotech button"
                 height={40}
                 width={40}
                 onClick={() => {

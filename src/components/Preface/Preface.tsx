@@ -288,7 +288,7 @@ const Preface = () => {
           <Box
             component="img"
             src="processD.png"
-            alt={"process"}
+            alt={"hygeinfotech process"}
             sx={{
               display: { lg: "block", xs: "none" },
               width: "90%",
@@ -297,7 +297,7 @@ const Preface = () => {
           <Box
             component="img"
             src="processM.png"
-            alt={"process"}
+            alt={"hygeinfotech process"}
             sx={{
               display: { lg: "none", xs: "block" },
               width: "90%",
@@ -364,7 +364,7 @@ const Preface = () => {
                 width="900"
                 height="540"
                 className="roundedImage"
-                alt="girl-banner"
+                alt="hygeinfotech girl-banner"
               />
             </Box>
             <Grid container>
@@ -430,7 +430,7 @@ const Preface = () => {
             <Box
               component="img"
               src="158.png"
-              alt={"logo"}
+              alt={"hygeinfotech logo"}
               sx={{
                 display: { lg: "inline-flex", xs: "none" },
               }}
@@ -438,7 +438,7 @@ const Preface = () => {
             <Box
               component="img"
               src="158Dark.png"
-              alt={"logo"}
+              alt={"hygeinfotech logo"}
               sx={{
                 display: { lg: "none", xs: "inline-flex" },
               }}
@@ -454,7 +454,7 @@ const Preface = () => {
             <Box
               component="img"
               src="138.png"
-              alt={"logo"}
+              alt={"hygeinfotech logo"}
               sx={{
                 display: { lg: "inline-flex", xs: "none" },
               }}
@@ -462,7 +462,7 @@ const Preface = () => {
             <Box
               component="img"
               src="138Dark.png"
-              alt={"logo"}
+              alt={"hygeinfotech logo"}
               sx={{
                 display: { lg: "none", xs: "inline-flex" },
               }}
@@ -478,7 +478,7 @@ const Preface = () => {
             <Box
               component="img"
               src="139.png"
-              alt={"logo"}
+              alt={"hygeinfotech logo"}
               sx={{
                 display: { lg: "inline-flex", xs: "none" },
               }}
@@ -486,7 +486,7 @@ const Preface = () => {
             <Box
               component="img"
               src="139Dark.png"
-              alt={"logo"}
+              alt={"hygeinfotech logo"}
               sx={{
                 display: { lg: "none", xs: "inline-flex" },
               }}
