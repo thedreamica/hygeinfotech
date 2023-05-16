@@ -36,7 +36,7 @@ const Footer = () => {
         >
           <Image
             src="/infotechLogo.png"
-            alt="logo"
+            alt="hygeinfotech logo"
             width={150}
             height={75}
             priority
@@ -55,7 +55,7 @@ const Footer = () => {
             >
               <Image
                 src="/infotechLogo.png"
-                alt="logo"
+                alt="hygeinfotech logo"
                 width={201}
                 height={90}
                 priority
@@ -159,7 +159,7 @@ const Footer = () => {
                       <Box
                         component="img"
                         src={item.link}
-                        alt="icon"
+                        alt="hygeinfotech icon"
                         sx={{
                           display: "inline-flex",
                           width: index === 0 ? "15px" : "20px",
