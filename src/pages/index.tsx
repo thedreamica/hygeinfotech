@@ -22,6 +22,7 @@ const Home = () => {
       <Head>
         {/*  Google tag (gtag.js)  */}
         <title>Hyge Infotech</title>
+        <link rel="canonical" href="https://hygeinfotech.com/" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Hyge Infotech: Empowering businesses with comprehensive IT services. From cutting-edge software development to secure network solutions, we deliver tailored technology solutions to drive your success. Trust our expertise for seamless integration, enhanced efficiency, and unmatched support. Unlock your business's full potential with Hyge Infotech today." />
         <meta name="keywords" content="Hyge Infotech, hygeinfotech, Hyge Info Tech" />
