@@ -17,9 +17,15 @@ const SolutionsList = () => {
           container
           item
           justifyContent="space-between"
-          py={6}
-          sx={{ borderTop: "1px solid #707070" }}
+          
+          className="selectorGrid"
+          sx={{ borderTop: "1px solid #707070" ,position:'relative' , paddingTop:{lg:6,xs:2}, paddingBottom:{lg:6,xs:2} , display:{lg:'flex',xs:'block'}}}
         >
+          <Box className="thumbnailImage">
+            <Image src={item.thumbnail} width={450}
+                height={500}
+                alt={item.title}/>
+          </Box>
           <Grid item lg={5}>
             <Stack direction="row" gap={4} alignItems="center">
               <Image
@@ -28,7 +34,7 @@ const SolutionsList = () => {
                 height={item.icon.height}
                 alt={item.title}
               />
-              <Typography component="h4" fontSize="40px" fontWeight={600}>
+              <Typography component="h4" sx={{fontSize:{lg:'40px', sm:'20px'}}} fontWeight={600}>
                 {item.title}
               </Typography>
             </Stack>
