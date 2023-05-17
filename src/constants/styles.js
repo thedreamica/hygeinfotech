@@ -26,7 +26,7 @@ export const caption = {
 };
 
 export const buttonPrimary = {
-  minHeight: "72px",
+  minHeight: {lg:'72px',xs:'44px'},
   border: "1px solid #000000",
   padding: "15px 32px 17px",
   borderRadius: "50px",
@@ -40,9 +40,25 @@ export const buttonPrimary = {
   },
 };
 
+export const buttonSecondary = {
+  minHeight: {lg:'72px',xs:'44px'},
+  border: "1px solid #FFCC00",
+  padding: "15px 32px 17px",
+  borderRadius: "50px",
+  background: "linear-gradient(to left, #FFCC00 50%, #fff 50%) right",
+  backgroundSize: "200% 100%",
+  color: "#fff",
+  "&:hover": {
+    backgroundPosition: "left",
+    transition: "all 1s ease",
+    borderColor: "#FFCC00",
+    color:'#FFCC00'
+  },
+};
+
 export const circle = {
-  width: "71px",
-  height: "72px",
+  width: {lg:'72px',xs:'60px'},
+  height: {lg:'72px',xs:'60px'},
   borderRadius: "50%",
   border: "1px solid #000000",
   marginLeft: "10px",
@@ -54,6 +70,24 @@ export const circle = {
     borderColor: "#000",
   },
 };
+
+export const circleSecondary = {
+  width: {lg:'72px',xs:'60px'},
+  height: {lg:'72px',xs:'60px'},
+  borderRadius: "50%",
+  border: "1px solid #FFCC00",
+  marginLeft: "10px",
+  background: "linear-gradient(to left, #FFCC00 50%, #fff 50%) right",
+  backgroundSize: "200% 100%",
+  "&:hover": {
+    backgroundPosition: "left",
+    transition: "all 2s ease",
+    borderColor: "#FFCC00",
+    color:'#fff'
+  },
+};
+
+
 
 export const hLarge = {
   WebkitTextStroke: "0.1rem #000",
@@ -69,6 +103,7 @@ export const hLargeVertical = {
   writingMode: { lg: "vertical-rl", sm: "horizontal-tb" },
   fontSize: { lg: "300px", sm: "150px", xs: "70px" },
   lineHeight: 0.8,
+  marginBottom:'30px'
 };
 
 export const darkHallow = {

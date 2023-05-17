@@ -5,19 +5,19 @@ export const navItem = [
   },
   {
     text: "Services",
-    link: "/",
+    link: "#services",
   },
   {
     text: "Resources",
-    link: "/",
+    link: "#resources",
   },
   {
     text: "Why us",
-    link: "/",
+    link: "#why-us",
   },
   {
     text: "Contact us",
-    link: "/",
+    link: "#contact-us",
   },
 ];
 
@@ -73,6 +73,7 @@ export const solutionsData = [
       "Patient financial services",
       "Medical coding",
     ],
+    thumbnail: '/images/service_1.jpg'
   },
   {
     icon: {
@@ -86,6 +87,7 @@ export const solutionsData = [
       "Members Management",
       "Provider network data management",
     ],
+    thumbnail: '/images/service_2.jpg'
   },
   {
     icon: {
@@ -99,6 +101,7 @@ export const solutionsData = [
       "Revenue Cycle Analytics",
       "Business Cycle Analytics",
     ],
+    thumbnail: '/images/service_3.jpg'
   },
   {
     icon: {
@@ -114,6 +117,7 @@ export const solutionsData = [
       "Revenue Cycle Automation",
       "Clinical NLP APIs",
     ],
+    thumbnail: '/images/service_4.jpg'
   },
   {
     icon: {
@@ -129,6 +133,7 @@ export const solutionsData = [
       "Configuration Management",
       "Monitoring & Logging",
     ],
+    thumbnail: '/images/service_5.jpg'
   },
   {
     icon: {
@@ -143,6 +148,7 @@ export const solutionsData = [
       "Social Media Marketing",
       "Conversion Rate Optimization",
     ],
+    thumbnail: '/images/service_6.jpg'
   },
   {
     icon: {
@@ -156,6 +162,7 @@ export const solutionsData = [
       "Patient financial services",
       "Medical coding",
     ],
+    thumbnail: '/images/service_7.jpg'
   },
 ];
 
