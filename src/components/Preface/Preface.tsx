@@ -1,4 +1,11 @@
-import { Grid, Box, Typography, Chip, Button, Stack } from "@mui/material";
+import {
+  Grid,
+  Box,
+  Typography,
+  Chip,
+  Button,
+  Stack,
+} from "@mui/material";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { ImageGrid, SolutionsList } from "@components";
@@ -146,15 +153,14 @@ const Preface = () => {
               direction="row"
               justifyContent="flex-end"
               alignItems="center"
-              sx={{justifyContent:{lg:'flex-end',xs:'center'}}}
             >
               <Box
+                display="flex"
                 alignItems="center"
                 justifyContent="center"
                 sx={{
-                  display:{lg:'flex',xs:'none'},
-                  width: { lg: "212px", xs: "160px" },
-                  height: { lg: "212px", xs: "160px" },
+                  width: { lg: "212px", xs: "50px" },
+                  height: { lg: "212px", xs: "50px" },
                   border: "1px solid #6C7A89",
                   borderRadius: "50%",
                 }}
@@ -163,25 +169,7 @@ const Preface = () => {
                   src="/vector.png"
                   width={100}
                   height={120}
-                  alt={"arrow"} 
-                />
-              </Box>
-              <Box
-                alignItems="center"
-                justifyContent="center"
-                sx={{
-                  display:{lg:'none',xs:'flex'},
-                  width: '90px',
-                  height: '90px',
-                  border: "1px solid #6C7A89",
-                  borderRadius: "50%",
-                }}
-              >
-                <Image
-                  src="/mobileDownArrow.png"
-                  width={50}
-                  height={50}
-                  alt={"arrow"} 
+                  alt={"arrow"}
                 />
               </Box>
             </Stack>
@@ -312,7 +300,7 @@ const Preface = () => {
         <Grid container justifyContent={"center"} mt={5}>
           <Box
             component="img"
-            src="processD.svg"
+            src="processD.png"
             alt={"hygeinfotech process"}
             sx={{
               display: { lg: "block", xs: "none" },
@@ -321,7 +309,7 @@ const Preface = () => {
           />
           <Box
             component="img"
-            src="processD.svg"
+            src="processM.png"
             alt={"hygeinfotech process"}
             sx={{
               display: { lg: "none", xs: "block" },
@@ -384,7 +372,7 @@ const Preface = () => {
             </Typography>
             <Box display="flex" justifyContent="center" py={8}>
               <Image
-                src="/girl-banner.svg"
+                src="/girl-banner.png"
                 width="900"
                 height="540"
                 className="roundedImage"
@@ -507,16 +495,10 @@ const Preface = () => {
         </Grid>
       </Box>
       {/* Let's talk */}
-      <Box
-        component="section"
-        py={{ lg: 4, xs: 0 }}
-        px={4}
-        id="contact-us"
-        sx={{
-          backgroundColor: { lg: "#00051A", xs: "#00051A" },
-          color: { lg: "#ffffff", xs: "#fff" },
-        }}
-      >
+      <Box component="section" py={{lg:4,xs:0}} px={4} id="contact-us" sx={{
+        backgroundColor: { lg: "#00051A", xs: "#00051A" },
+        color: { lg: "#ffffff", xs: "#fff" },
+      }}>
         <Stack
           direction="column"
           justifyContent="center"
@@ -531,9 +513,9 @@ const Preface = () => {
                 sx={{
                   fontSize: { lg: "130px", sm: "50px" },
                   fontWeight: 700,
-                  marginTop: { lg: 15, xs: 0 },
-                  marginBottom: { lg: 8, xs: 0 },
-                  textAlign: { lg: "left", xs: "center" },
+                  marginTop: {lg:15,xs:0},
+                  marginBottom: {lg:8,xs:0},
+                  textAlign:{lg:"left",xs:'center'}
                 }}
                 component={"h2"}
               >
@@ -549,20 +531,19 @@ const Preface = () => {
                   border: "1px solid #FFCC00",
                   borderRadius: "50%",
                   margin: "auto",
-                  marginBottom: { lg: 0, xs: 5 },
-                  transform:{lg:'rotate(0deg)' , xs:'rotate(90deg)'}
+                  marginBottom: {lg:0,xs:5}
                 }}
               >
                 <Image
                   src="/letsTalk.svg"
                   width={100}
                   height={120}
-                  alt={"arrow"} 
+                  alt={"arrow"}
                 />
               </Box>
             </Grid>
             <Grid item lg={5} xs={12}>
-              <ContactCard />
+               <ContactCard/>
             </Grid>
             <Grid item ml={-1}></Grid>
           </Grid>

@@ -13,7 +13,6 @@ import {
 import React from "react";
 import { buttonPrimary, circle } from "@/constants";
 import { buttonSecondary, circleSecondary } from "@/constants/styles";
-import { useForm } from "react-hook-form";
 
 function ContactCard() {
   const styles = {
@@ -29,15 +28,8 @@ function ContactCard() {
       },
     },
   };
-  const { register, handleSubmit,formState: { errors } } = useForm();
-
-  const onSubmit = (data:any) => {
-    console.log(data);
-  };
-
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
     <Card sx={{ textAlign: "center" , borderRadius: '50px'}}>
       <CardContent>
         <Typography gutterBottom variant="h4"
@@ -58,38 +50,31 @@ function ContactCard() {
           id="standard-basic"
           label="Enter your name"
           variant="standard"
-          error={errors.name ? true : false}
-          {...register("name",{ required: true })}
         />
         <TextField
           sx={{ width: "100%", margin: "15px 0 0 0" }}
           id="standard-basic"
           label="Enter your Email address"
           variant="standard"
-          error={errors.email ? true : false}
-          {...register("email",{ required: true })}
         />
         <TextField
           sx={{ width: "100%", margin: "15px 0 0 0" }}
           id="standard-basic"
           label="Enter your phone number"
           variant="standard"
-          error={errors.phone ? true : false}
-          {...register("phone",{ required: true })}
         />
         <TextField
           sx={{ width: "100%", margin: "30px 0 40px 0" }}
           id="outlined-multiline-static"
           label="Message"
-          error={errors.message ? true : false}
-          {...register("message",{ required: true })}
+          
           multiline
           rows={7}
         />
       </Box>
       <CardActions sx={{ justifyContent: "center" }}>
         <Box display="flex" justifyContent="center" mb={6}>
-          <Button type="submit" variant={"outlined"} onClick={() => {}} sx={buttonSecondary}>
+          <Button variant={"outlined"} onClick={() => {}} sx={buttonSecondary}>
             <Typography
               sx={{
                 fontSize: { lg: "25px", sm: "17px" },
@@ -98,7 +83,7 @@ function ContactCard() {
               Contact us
             </Typography>
           </Button>
-          <Button variant={"outlined"} type="submit" sx={circleSecondary}>
+          <Button variant={"outlined"} onClick={() => {}} sx={circleSecondary}>
             <img
               src={"/right.png"}
               alt={"right arrow"}
@@ -111,7 +96,6 @@ function ContactCard() {
         </Box>
       </CardActions>
     </Card>
-    </form>
   );
 }
 
