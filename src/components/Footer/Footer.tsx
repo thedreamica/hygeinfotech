@@ -65,9 +65,6 @@ const Footer = () => {
                 color="#EEB609"
                 fontWeight={700}
                 mt={3}
-                sx={{
-                  fontSize: { lg: "20px", sx: "15px" },
-                }}
               >
                 Catalyze your success with transformative tech
               </Typography>
@@ -80,14 +77,14 @@ const Footer = () => {
               pl={1}
               sx={{
                 fontFamily: "Montserrat",
-                fontSize: { lg: "22px", xs: "16px" },
+                fontSize: { lg: "26px", sx: "15px" },
                 fontWeight: "400",
                 color: { lg: "#ffffff", xs: "#000" },
               }}
             >
               <Typography
                 component={"h6"}
-                sx={{ fontSize: "20px", fontWeight: 700 }}
+                sx={{ fontSize: "24px", fontWeight: 700 }}
               >
                 <span dangerouslySetInnerHTML={{
                   __html : officeIcon,
@@ -97,10 +94,9 @@ const Footer = () => {
               <Typography
                 variant={"body1"}
                 py={1}
-                mb={2}
                 sx={{
                   fontFamily: "Montserrat",
-                  fontSize: { lg: "20px", xs: "15px" },
+                  fontSize: "22px",
                   color: "#AFAEAF",
                 }}
               >
@@ -113,7 +109,7 @@ const Footer = () => {
               <Typography
                 component={"h6"}
                 mt="4px"
-                sx={{ fontSize: {lg:"20px",sm:"20px"}, fontWeight: 700,color:'#fff',verticalAlign:'middle' }}
+                sx={{ fontSize: {lg:"24px",sm:"20px"}, fontWeight: 700,color:'#fff',verticalAlign:'middle' }}
               >
                 <span dangerouslySetInnerHTML={{
                   __html : emailIcon,
@@ -129,7 +125,7 @@ const Footer = () => {
             >
               <Typography
                 component={"h6"}
-                sx={{ fontSize: "20px", fontWeight: 700 }}
+                sx={{ fontSize: "24px", fontWeight: 700 }}
               >
                 Links
               </Typography>
@@ -138,7 +134,7 @@ const Footer = () => {
                   <Link href="/" key={`link-${index}`}>
                     <Typography
                       fontFamily="Montserrat"
-                      fontSize="20px"
+                      fontSize="22px"
                       color="#AFAEAF"
                       fontWeight="normal"
                       mt={3}
@@ -152,10 +148,7 @@ const Footer = () => {
             <Grid item xs mt={{ lg: 10, xs: 2 }}>
               <Typography
                 component={"h6"}
-                mt={2}
-                sx={{ 
-                  fontSize: { lg: "20px", sx: "16px" },
-                  fontWeight: 700 }}
+                sx={{ fontSize: "24px", fontWeight: 700 }}
               >
                 Get in Touch
               </Typography>
@@ -178,7 +171,7 @@ const Footer = () => {
                       <Link href="/">
                         <Typography
                           fontFamily="Montserrat"
-                          sx={{fontSize: { lg: "20px", sx: "16px" },}}
+                          fontSize="22px"
                           color="#AFAEAF"
                           fontWeight="normal"
                         >
@@ -192,13 +185,13 @@ const Footer = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container justifyContent={"right"} sx={{marginTop: {lg:7,xs:5} }} pb={0}>
+        <Grid container justifyContent={"right"} mt={10} pb={2}>
           <Grid item xs={12} lg={6}>
             <Typography
               variant={"body2"}
               sx={{
                 fontFamily: "Poppins",
-                fontSize: { lg: "16px", sx: "16px" },
+                fontSize: "22px",
                 fontWeight: "400",
               }}
             >
@@ -212,7 +205,7 @@ const Footer = () => {
                 fontFamily: "Montserrat",
                 fontStyle: "normal",
                 fontWeight: "400",
-                fontSize: "16px",
+                fontSize: "22px",
               }}
             >
               Terms and conditions
