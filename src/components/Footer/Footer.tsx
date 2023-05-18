@@ -20,7 +20,7 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        borderRadius: { lg: "0 0 0 0 ", xs: "0px 0 0" },
+        borderRadius: { lg: "25% 25% 0 0 ", xs: "88px 80px 0 0" },
         backgroundColor: { lg: "#00051A", xs: "#00051A" },
         color: { lg: "#ffffff", xs: "#fff" },
       }}
