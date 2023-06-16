@@ -119,6 +119,44 @@ const Footer = () => {
             </Grid>
             <Grid
               item
+              xs={12}
+              lg={4}
+              mt={{ lg: 10, xs: 1 }}
+              pl={1}
+              sx={{
+                fontFamily: "Montserrat",
+                fontSize: { lg: "26px", sx: "15px" },
+                fontWeight: "400",
+                color: { lg: "#ffffff", xs: "#000" },
+              }}
+            >
+              <Typography
+                component={"h6"}
+                sx={{ fontSize: "24px", fontWeight: 700 }}
+              >
+                <span dangerouslySetInnerHTML={{
+                  __html : officeIcon,
+                }} />
+                &nbsp;Branch Office
+              </Typography>
+              <Typography
+                variant={"body1"}
+                py={1}
+                sx={{
+                  fontFamily: "Montserrat",
+                  fontSize: "22px",
+                  color: "#AFAEAF",
+                }}
+              >
+                Dot Cowork - Tidel Park,
+                <br />
+                1st Floor D Block, Tharamani,
+                <br />
+                Chennai - 600113
+              </Typography>
+            </Grid>
+            <Grid
+              item
               xs
               mt={{ lg: 10, xs: 2 }}
               sx={{ display: { lg: "block", xs: "none" } }}
