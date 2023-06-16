@@ -100,11 +100,11 @@ const Footer = () => {
                   color: "#AFAEAF",
                 }}
               >
-                Dot Cowork - Tidel Park,
+                No 1502A,15th floor, Musalla Towers,
                 <br />
-                1st Floor D Block, Tharamani,
+                Kalid  Bin Al Waleed road, Al Hamriya,
                 <br />
-                Chennai - 600113
+                Dubai, UAE, (Tele : 043554408, PO Box : 44320)
               </Typography>
               <Typography
                 component={"h6"}
