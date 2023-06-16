@@ -100,7 +100,7 @@ const Footer = () => {
                   color: "#AFAEAF",
                 }}
               >
-                No 1502A,15th floor, Musalla Towers,
+                No 152A,15th floor, Al Musalla Towers,
                 <br />
                 Kalid  Bin Al Waleed road, Al Hamriya,
                 <br />
