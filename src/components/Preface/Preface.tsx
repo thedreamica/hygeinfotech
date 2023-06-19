@@ -25,7 +25,7 @@ import {
 } from "@/constants";
 import { hLargeVertical, lightHallow } from "@/constants/styles";
 import { BorderBottom } from "@mui/icons-material";
-import SliderGrid from "../ImageGrid/SliderGrid";
+// import SliderGrid from "../ImageGrid/SliderGrid";
 import ContactCard from "../Contact/ContactCard";
 
 const Preface = () => {
@@ -204,7 +204,7 @@ const Preface = () => {
           </Typography>
         </Grid>
         <Box mt={8} px={4}>
-          <SliderGrid />
+          {/* <SliderGrid /> */}
         </Box>
       </Box>
       {/* Divider */}
