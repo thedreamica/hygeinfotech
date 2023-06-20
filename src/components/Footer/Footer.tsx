@@ -89,7 +89,7 @@ const Footer = () => {
                 <span dangerouslySetInnerHTML={{
                   __html : officeIcon,
                 }} />
-                &nbsp;Office
+                &nbsp;HQ
               </Typography>
               <Typography
                 variant={"body1"}
