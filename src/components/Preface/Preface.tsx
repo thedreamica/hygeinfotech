@@ -1,11 +1,4 @@
-import {
-  Grid,
-  Box,
-  Typography,
-  Chip,
-  Button,
-  Stack,
-} from "@mui/material";
+import { Grid, Box, Typography, Chip, Button, Stack } from "@mui/material";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { ImageGrid, SolutionsList } from "@components";
@@ -206,6 +199,81 @@ const Preface = () => {
         <Box mt={8} px={4}>
           <SliderGrid />
         </Box>
+      </Box>
+      <Box component="section" py={4} id="why-us">
+        <Grid container justifyContent={"center"}>
+          <Typography
+            variant={"h2"}
+            mb={2}
+            sx={{
+              fontWeight: "700",
+              fontFamily: "Poppins",
+              fontSize: { lg: "100px", xs: "40px" },
+            }}
+          >
+            HCC
+          </Typography>
+        </Grid>
+        <Grid container justifyContent={"center"} >
+          <Typography variant={"h2"} sx={darkHallow}>
+            Coding
+          </Typography>
+          <Box>
+            <Typography
+              sx={{
+                fontFamily: "Montserrat",
+                fontSize: { lg: "30px", md: "30px", xs: "21px" },
+                fontWeight: "400",
+                textAlign: "center",
+                width: { lg: "86%" },
+                margin: {
+                  lg: "auto"
+                },
+                marginTop: { lg: "70px" }
+              }}
+            >
+              At Hyge Infotech, we pride ourselves on being the leading experts
+              in HCC (Hierarchical Condition Category) coding. With our
+              extensive experience and in-depth understanding of the intricacies
+              involved, we are dedicated to helping healthcare organizations
+              achieve accurate and optimal coding practices. 
+            </Typography>
+            <Box sx={{
+              display: "flex",
+              flexDirection: {
+                lg: "column"
+              },
+              justifyContent: "center",
+              alignItems: {
+                lg: 'center'
+              },
+              width: {
+                lg: "80%"
+              }, 
+              margin: {
+                lg: "60px auto 0"
+              },
+              gap: {
+                lg: "8px"
+              }
+            }}>
+            <Typography sx={{
+                fontFamily: "Montserrat",
+                fontSize: { lg: "30px", md: "30px", xs: "21px" },
+                fontWeight: "400",
+                textAlign: "center",
+              }}>
+            Why Choose Hyge
+              Infotech for HCC Coding?
+            </Typography>
+            <Button variant="outlined" sx={{
+              width: "fit-content"
+            }}>
+              Learn more
+            </Button>
+            </Box>
+          </Box>
+        </Grid>
       </Box>
       {/* Divider */}
       <Box height="4px" bgcolor="#034AB2" my={2} />
@@ -495,10 +563,16 @@ const Preface = () => {
         </Grid>
       </Box>
       {/* Let's talk */}
-      <Box component="section" py={{lg:4,xs:0}} px={4} id="contact-us" sx={{
-        backgroundColor: { lg: "#00051A", xs: "#00051A" },
-        color: { lg: "#ffffff", xs: "#fff" },
-      }}>
+      <Box
+        component="section"
+        py={{ lg: 4, xs: 0 }}
+        px={4}
+        id="contact-us"
+        sx={{
+          backgroundColor: { lg: "#00051A", xs: "#00051A" },
+          color: { lg: "#ffffff", xs: "#fff" },
+        }}
+      >
         <Stack
           direction="column"
           justifyContent="center"
@@ -513,9 +587,9 @@ const Preface = () => {
                 sx={{
                   fontSize: { lg: "130px", sm: "50px" },
                   fontWeight: 700,
-                  marginTop: {lg:15,xs:0},
-                  marginBottom: {lg:8,xs:0},
-                  textAlign:{lg:"left",xs:'center'}
+                  marginTop: { lg: 15, xs: 0 },
+                  marginBottom: { lg: 8, xs: 0 },
+                  textAlign: { lg: "left", xs: "center" },
                 }}
                 component={"h2"}
               >
@@ -531,7 +605,7 @@ const Preface = () => {
                   border: "1px solid #FFCC00",
                   borderRadius: "50%",
                   margin: "auto",
-                  marginBottom: {lg:0,xs:5}
+                  marginBottom: { lg: 0, xs: 5 },
                 }}
               >
                 <Image
@@ -543,7 +617,7 @@ const Preface = () => {
               </Box>
             </Grid>
             <Grid item lg={5} xs={12}>
-               <ContactCard/>
+              <ContactCard />
             </Grid>
             <Grid item ml={-1}></Grid>
           </Grid>

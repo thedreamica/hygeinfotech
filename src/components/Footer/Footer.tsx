@@ -32,7 +32,7 @@ const Footer = () => {
           container
           justifyContent={"right"}
           mb={-8}
-          sx={{ display: { lg: "none", xs: "flex" } }}
+          sx={{ display: { lg: "none", xs: "flex" }, marginBottom: {xs: "30px"} }}
         >
           <Image
             src="/infotechLogo.png"
@@ -84,12 +84,14 @@ const Footer = () => {
             >
               <Typography
                 component={"h6"}
-                sx={{ fontSize: "24px", fontWeight: 700 }}
+                sx={{ fontSize: "24px", fontWeight: 700, color: "#FFFFFF" }}
               >
-                <span dangerouslySetInnerHTML={{
-                  __html : officeIcon,
-                }} />
-                &nbsp;HQ
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: officeIcon,
+                  }}
+                />
+                &nbsp; International quartier général
               </Typography>
               <Typography
                 variant={"body1"}
@@ -102,18 +104,25 @@ const Footer = () => {
               >
                 No 152A,15th floor, Al Musalla Towers,
                 <br />
-                Kalid  Bin Al Waleed road, Al Hamriya,
+                Kalid Bin Al Waleed road, Al Hamriya,
                 <br />
                 Dubai, UAE, (Tele : 043554408, PO Box : 44320)
               </Typography>
               <Typography
                 component={"h6"}
                 mt="4px"
-                sx={{ fontSize: {lg:"24px",sm:"20px"}, fontWeight: 700,color:'#fff',verticalAlign:'middle' }}
+                sx={{
+                  fontSize: { lg: "24px", sm: "20px" },
+                  fontWeight: 700,
+                  color: "#fff",
+                  verticalAlign: "middle",
+                }}
               >
-                <span dangerouslySetInnerHTML={{
-                  __html : emailIcon,
-                }} />
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: emailIcon,
+                  }}
+                />
                 &nbsp;support@hygeinfotech.com
               </Typography>
             </Grid>
@@ -132,12 +141,14 @@ const Footer = () => {
             >
               <Typography
                 component={"h6"}
-                sx={{ fontSize: "24px", fontWeight: 700 }}
+                sx={{ fontSize: "24px", fontWeight: 700, color: "#FFFFFF" }}
               >
-                <span dangerouslySetInnerHTML={{
-                  __html : officeIcon,
-                }} />
-                &nbsp;Branch Office
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: officeIcon,
+                  }}
+                />
+                &nbsp; Indian quartier général
               </Typography>
               <Typography
                 variant={"body1"}
